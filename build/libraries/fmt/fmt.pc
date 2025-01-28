@@ -1,11 +1,11 @@
-prefix=C:/Program Files (x86)/cpp_template
-exec_prefix=C:/Program Files (x86)/cpp_template
+prefix=C:/Program Files (x86)/boids
+exec_prefix=C:/Program Files (x86)/boids
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
 Name: fmt
 Description: A modern formatting library
 Version: 11.1.3
-Libs: -L${libdir} -lfmtd
+Libs: -L${libdir} -lfmt
 Cflags: -I${includedir}
 

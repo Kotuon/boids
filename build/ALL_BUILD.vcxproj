@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CBF9A774-BABA-37BF-80B9-FE1DE5DE66C0}</ProjectGuid>
+    <ProjectGuid>{176836AB-8BD0-3C4F-ABA0-F5F92A7F6A19}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\cpp_template\src;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\cpp_template\src;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\cpp_template\src;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\cpp_template\src;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\cpp_template\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Kelson\Documents\Projects\cpp_template\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\Kelson\Documents\Projects\boids\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/cpp_template/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/cpp_template -BC:/Users/Kelson/Documents/Projects/cpp_template/build --check-stamp-file C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/cpp_template/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/cpp_template -BC:/Users/Kelson/Documents/Projects/cpp_template/build --check-stamp-file C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/cpp_template/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/cpp_template -BC:/Users/Kelson/Documents/Projects/cpp_template/build --check-stamp-file C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/cpp_template/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/cpp_template -BC:/Users/Kelson/Documents/Projects/cpp_template/build --check-stamp-file C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,38 +159,46 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Kelson\Documents\Projects\cpp_template\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\cpp_template\build\ZERO_CHECK.vcxproj">
-      <Project>{25D3E71D-9D49-3519-9E99-5A195C9FEF98}</Project>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\ZERO_CHECK.vcxproj">
+      <Project>{5B6CC4C0-859F-306C-918A-2930E11AD232}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\cpp_template\build\cpp_template.vcxproj">
-      <Project>{E8CB1AB0-7F02-3718-846F-77D7DC842A75}</Project>
-      <Name>cpp_template</Name>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\boids.vcxproj">
+      <Project>{696CFC34-5842-35C9-9502-E0A999FC47FD}</Project>
+      <Name>boids</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\cpp_template\build\libraries\crashHandler\crashHandler.vcxproj">
-      <Project>{B33BA98E-D24D-3D57-B474-5E729E42F1FC}</Project>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\crashHandler\crashHandler.vcxproj">
+      <Project>{1D2E7977-6A66-3467-B531-04AF04ACAC5C}</Project>
       <Name>crashHandler</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\cpp_template\build\libraries\fmt\fmt.vcxproj">
-      <Project>{6FA5C78C-161C-379B-A295-EE7BB67AA4D3}</Project>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\fmt\fmt.vcxproj">
+      <Project>{7DA24498-CA40-326E-881C-B916014F75B3}</Project>
       <Name>fmt</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\cpp_template\build\libraries\profiler\profiler.vcxproj">
-      <Project>{1A2BABDF-963E-3AE1-9214-D516FB12474C}</Project>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-build\raylib\external\glfw\src\glfw.vcxproj">
+      <Project>{2DD42A66-22A2-3629-8644-C0C16C5EAE18}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\profiler\profiler.vcxproj">
+      <Project>{19084E4D-2FBB-356C-8445-BD9E17ECF28E}</Project>
       <Name>profiler</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\cpp_template\build\libraries\traceSystem\traceSystem.vcxproj">
-      <Project>{E3F69C9F-AB55-3B11-B72E-5B046A6D8CB9}</Project>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-build\raylib\raylib.vcxproj">
+      <Project>{A9DF9DB8-C2CD-3F18-B48D-383BED196855}</Project>
+      <Name>raylib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\traceSystem\traceSystem.vcxproj">
+      <Project>{8A045183-3AE1-3AFB-84BA-740133ABE808}</Project>
       <Name>traceSystem</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,7 +10,7 @@ C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake
 C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake
 C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake
 C:/Program Files/CMake/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake
-C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/CMakeLists.txt
-C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/support/cmake/JoinPaths.cmake
-C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/support/cmake/fmt-config.cmake.in
-C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/support/cmake/fmt.pc.in
+C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/CMakeLists.txt
+C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/support/cmake/JoinPaths.cmake
+C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/support/cmake/fmt-config.cmake.in
+C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/support/cmake/fmt.pc.in

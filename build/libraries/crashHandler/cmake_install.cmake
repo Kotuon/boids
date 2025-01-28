@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Kelson/Documents/Projects/cpp_template/libraries/crashHandler
+# Install script for directory: C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/cpp_template")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/boids")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

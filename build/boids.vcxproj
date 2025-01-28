@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{696CFC34-5842-35C9-9502-E0A999FC47FD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>boids</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">boids.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">boids.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Kelson\Documents\Projects\boids\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">boids.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Kelson\Documents\Projects\boids\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">boids.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>_deps\raylib-build\raylib\Debug\raylib.lib;libraries\fmt\Debug\fmtd.lib;libraries\traceSystem\Debug\traceSystem.lib;libraries\crashHandler\Debug\crashHandler.lib;libraries\profiler\Debug\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\Debug\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/Debug/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/Debug/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>_deps\raylib-build\raylib\Release\raylib.lib;libraries\fmt\Release\fmt.lib;libraries\traceSystem\Release\traceSystem.lib;libraries\crashHandler\Release\crashHandler.lib;libraries\profiler\Release\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\Release\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/Release/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/Release/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>_deps\raylib-build\raylib\MinSizeRel\raylib.lib;libraries\fmt\MinSizeRel\fmt.lib;libraries\traceSystem\MinSizeRel\traceSystem.lib;libraries\crashHandler\MinSizeRel\crashHandler.lib;libraries\profiler\MinSizeRel\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\MinSizeRel\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/MinSizeRel/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/MinSizeRel/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>_deps\raylib-build\raylib\RelWithDebInfo\raylib.lib;libraries\fmt\RelWithDebInfo\fmt.lib;libraries\traceSystem\RelWithDebInfo\traceSystem.lib;libraries\crashHandler\RelWithDebInfo\crashHandler.lib;libraries\profiler\RelWithDebInfo\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\RelWithDebInfo\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/RelWithDebInfo/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/RelWithDebInfo/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Kelson\Documents\Projects\boids\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids -BC:/Users/Kelson/Documents/Projects/boids/build --check-stamp-file C:/Users/Kelson/Documents/Projects/boids/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Kelson\Documents\Projects\boids\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\ZERO_CHECK.vcxproj">
+      <Project>{5B6CC4C0-859F-306C-918A-2930E11AD232}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\crashHandler\crashHandler.vcxproj">
+      <Project>{1D2E7977-6A66-3467-B531-04AF04ACAC5C}</Project>
+      <Name>crashHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\fmt\fmt.vcxproj">
+      <Project>{7DA24498-CA40-326E-881C-B916014F75B3}</Project>
+      <Name>fmt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-build\raylib\external\glfw\src\glfw.vcxproj">
+      <Project>{2DD42A66-22A2-3629-8644-C0C16C5EAE18}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\profiler\profiler.vcxproj">
+      <Project>{19084E4D-2FBB-356C-8445-BD9E17ECF28E}</Project>
+      <Name>profiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-build\raylib\raylib.vcxproj">
+      <Project>{A9DF9DB8-C2CD-3F18-B48D-383BED196855}</Project>
+      <Name>raylib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\traceSystem\traceSystem.vcxproj">
+      <Project>{8A045183-3AE1-3AFB-84BA-740133ABE808}</Project>
+      <Name>traceSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

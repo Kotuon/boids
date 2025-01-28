@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt
+# Install script for directory: C:/Users/Kelson/Documents/Projects/boids/libraries/fmt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/cpp_template")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/boids")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,39 +34,39 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "fmt-core" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/Debug/fmtd.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/Debug/fmtd.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/Release/fmt.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/Release/fmt.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/MinSizeRel/fmt.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/MinSizeRel/fmt.lib")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/RelWithDebInfo/fmt.lib")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/RelWithDebInfo/fmt.lib")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "fmt-core" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/fmt" TYPE FILE FILES
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/args.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/base.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/chrono.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/color.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/compile.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/core.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/format.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/format-inl.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/os.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/ostream.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/printf.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/ranges.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/std.h"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/libraries/fmt/include/fmt/xchar.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/args.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/base.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/chrono.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/color.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/compile.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/core.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/format.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/format-inl.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/os.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/ostream.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/printf.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/ranges.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/std.h"
+    "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include/fmt/xchar.h"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "fmt-core" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES
-    "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/fmt-config.cmake"
-    "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/fmt-config-version.cmake"
+    "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/fmt-config.cmake"
+    "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/fmt-config-version.cmake"
     )
 endif()
 
@@ -74,7 +74,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "fmt-core" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt/fmt-targets.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt/fmt-targets.cmake"
-         "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets.cmake")
+         "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt/fmt-targets-*.cmake")
       if(_cmake_old_config_files)
@@ -87,22 +87,22 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "fmt-core" OR NOT CMAKE_INSTALL_COMPONENT)
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-debug.cmake")
   endif()
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-minsizerel.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-minsizerel.cmake")
   endif()
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-relwithdebinfo.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-relwithdebinfo.cmake")
   endif()
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/fmt" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/CMakeFiles/Export/b834597d9b1628ff12ae4314c3a2e4b8/fmt-targets-release.cmake")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "fmt-core" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/fmt.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "C:/Users/Kelson/Documents/Projects/boids/build/libraries/fmt/fmt.pc")
 endif()
 
