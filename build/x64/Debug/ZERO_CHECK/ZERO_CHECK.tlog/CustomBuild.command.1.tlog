@@ -1,0 +1,10 @@
+^C:\USERS\KELSON\DOCUMENTS\PROJECTS\CPP_TEMPLATE\BUILD\CMAKEFILES\636D60CC723A4850AD8E3B781C7D2FF1\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/cpp_template -BC:/Users/Kelson/Documents/Projects/cpp_template/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Kelson/Documents/Projects/cpp_template/build/cpp_template.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

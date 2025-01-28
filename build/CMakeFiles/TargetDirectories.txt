@@ -1,0 +1,16 @@
+C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/cpp_template.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/INSTALL.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/fmt.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/INSTALL.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/fmt/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/traceSystem/CMakeFiles/traceSystem.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/traceSystem/CMakeFiles/INSTALL.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/traceSystem/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/crashHandler/CMakeFiles/crashHandler.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/crashHandler/CMakeFiles/INSTALL.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/crashHandler/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/profiler/CMakeFiles/profiler.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/profiler/CMakeFiles/INSTALL.dir
+C:/Users/Kelson/Documents/Projects/cpp_template/build/libraries/profiler/CMakeFiles/ALL_BUILD.dir

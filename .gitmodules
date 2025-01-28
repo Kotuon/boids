@@ -1,0 +1,12 @@
+[submodule "libraries/traceSystem"]
+	path = libraries/traceSystem
+	url = https://github.com/Kotuon/traceSystem
+[submodule "libraries/crashHandler"]
+	path = libraries/crashHandler
+	url = https://github.com/Kotuon/crashHandler
+[submodule "libraries/profiler"]
+	path = libraries/profiler
+	url = https://github.com/Kotuon/profiler
+[submodule "libraries/fmt"]
+	path = libraries/fmt
+	url = https://github.com/fmtlib/fmt
