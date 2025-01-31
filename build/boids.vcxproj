@@ -87,7 +87,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -106,10 +106,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -117,7 +117,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\raylib-build\raylib\Debug\raylib.lib;libraries\fmt\Debug\fmtd.lib;libraries\traceSystem\Debug\traceSystem.lib;libraries\crashHandler\Debug\crashHandler.lib;libraries\profiler\Debug\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\Debug\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\raylib-build\raylib\Debug\raylib.lib;libraries\fmt\Debug\fmtd.lib;libraries\traceSystem\Debug\traceSystem.lib;libraries\crashHandler\Debug\crashHandler.lib;libraries\profiler\Debug\profiler.lib;libraries\timeManager\Debug\timeManager.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\Debug\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -133,7 +133,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
@@ -152,10 +152,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -163,7 +163,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\raylib-build\raylib\Release\raylib.lib;libraries\fmt\Release\fmt.lib;libraries\traceSystem\Release\traceSystem.lib;libraries\crashHandler\Release\crashHandler.lib;libraries\profiler\Release\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\Release\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\raylib-build\raylib\Release\raylib.lib;libraries\fmt\Release\fmt.lib;libraries\traceSystem\Release\traceSystem.lib;libraries\crashHandler\Release\crashHandler.lib;libraries\profiler\Release\profiler.lib;libraries\timeManager\Release\timeManager.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\Release\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -179,7 +179,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
@@ -198,10 +198,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -209,7 +209,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\raylib-build\raylib\MinSizeRel\raylib.lib;libraries\fmt\MinSizeRel\fmt.lib;libraries\traceSystem\MinSizeRel\traceSystem.lib;libraries\crashHandler\MinSizeRel\crashHandler.lib;libraries\profiler\MinSizeRel\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\MinSizeRel\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\raylib-build\raylib\MinSizeRel\raylib.lib;libraries\fmt\MinSizeRel\fmt.lib;libraries\traceSystem\MinSizeRel\traceSystem.lib;libraries\crashHandler\MinSizeRel\crashHandler.lib;libraries\profiler\MinSizeRel\profiler.lib;libraries\timeManager\MinSizeRel\timeManager.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\MinSizeRel\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -225,7 +225,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /utf-8</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -243,10 +243,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_DESKTOP;GRAPHICS_API_OPENGL_33;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src;C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-src\src\external\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -254,7 +254,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>_deps\raylib-build\raylib\RelWithDebInfo\raylib.lib;libraries\fmt\RelWithDebInfo\fmt.lib;libraries\traceSystem\RelWithDebInfo\traceSystem.lib;libraries\crashHandler\RelWithDebInfo\crashHandler.lib;libraries\profiler\RelWithDebInfo\profiler.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\RelWithDebInfo\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>_deps\raylib-build\raylib\RelWithDebInfo\raylib.lib;libraries\fmt\RelWithDebInfo\fmt.lib;libraries\traceSystem\RelWithDebInfo\traceSystem.lib;libraries\crashHandler\RelWithDebInfo\crashHandler.lib;libraries\profiler\RelWithDebInfo\profiler.lib;libraries\timeManager\RelWithDebInfo\timeManager.lib;opengl32.lib;glu32.lib;winmm.lib;_deps\raylib-build\raylib\external\glfw\src\RelWithDebInfo\glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -325,6 +325,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\boid.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\boid_manager.cpp" />
     <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +355,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\_deps\raylib-build\raylib\raylib.vcxproj">
       <Project>{A9DF9DB8-C2CD-3F18-B48D-383BED196855}</Project>
       <Name>raylib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\timeManager\timeManager.vcxproj">
+      <Project>{C20C40EF-11FE-347D-972F-6AB27E948955}</Project>
+      <Name>timeManager</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\libraries\traceSystem\traceSystem.vcxproj">
       <Project>{8A045183-3AE1-3AFB-84BA-740133ABE808}</Project>

@@ -18,6 +18,7 @@ add_subdirectory(libraries/fmt)
 add_subdirectory(libraries/traceSystem)
 add_subdirectory(libraries/crashHandler)
 add_subdirectory(libraries/profiler)
+add_subdirectory(libraries/timeManager)
 
 
 # Try to find a locally installed raylib, but don't quit on fail
@@ -56,6 +57,7 @@ include_directories(include/
     SYSTEM libraries/traceSystem/include
     SYSTEM libraries/crashHandler/include
     SYSTEM libraries/profiler/include
+    SYSTEM libraries/timeManager/include
 )
 
 # Link raylib to main
@@ -65,6 +67,7 @@ target_link_libraries(${PROJECT_NAME}
     traceSystem
     crashHandler
     profiler
+    timeManager
 )
 
 # Make main find the <raylib.h> header (and others)

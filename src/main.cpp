@@ -7,53 +7,49 @@
 
 #include "crash_handler.hpp"
 #include "profiler.hpp"
+#include "time_manager.hpp"
+#include "trace.hpp"
 
 constexpr int WIDTH = 1280;
 constexpr int HEIGHT = 720;
 
-// Update loop
-using namespace std::chrono;
-steady_clock::time_point LastTime;
-steady_clock::time_point CurrTime;
-steady_clock::duration TimeTaken;
-float Accumulator;
-float Time;
-float DeltaTime;
-constexpr float FixedDt = 0.02f;
+#include "boid.hpp"
+#include "boid_manager.hpp"
 
 int main( int, char** ) {
     setupDump();
 
     InitWindow( WIDTH, HEIGHT, "basic window" );
 
-    LastTime = steady_clock::now();
-    Accumulator = 0.f;
-    Time = 0.f;
+    TimeManager Time;
 
-    Profiler profiler;
+    Profiler Profiler;
+
+    BoidManager BoidManagerInstance( Vector2(
+        static_cast< float >( WIDTH ), static_cast< float >( HEIGHT ) ) );
+
+    // Boid BoidInstance( Vector2( WIDTH / 2.f, HEIGHT / 2.f ), 7.5f );
+    // BoidInstance.setSpeed( 1.f );
 
     while ( !WindowShouldClose() ) {
-        CurrTime = steady_clock::now();
-        TimeTaken = CurrTime - LastTime;
-        DeltaTime = static_cast< float >( TimeTaken.count() ) *
-                    steady_clock::period::num / steady_clock::period::den;
-        LastTime = CurrTime;
-        Accumulator += DeltaTime;
+        Time.update();
 
-        SetWindowTitle(
-            fmt::format( "basic window: FPS: {:0.2f}", 1.f / DeltaTime )
-                .c_str() );
+        SetWindowTitle( fmt::format( "basic window: FPS: {:0.2f}",
+                                     1.f / Time.getDeltaTime() )
+                            .c_str() );
 
-        while ( Accumulator >= FixedDt ) {
+        while ( Time.needsFixedUpdate() ) {
             // Fixed update here
-            Accumulator -= FixedDt;
-            Time += FixedDt;
+            BoidManagerInstance.update();
         }
 
         // Frame update here
 
         BeginDrawing();
         ClearBackground( DARKGRAY );
+
+        // Draw here
+        BoidManagerInstance.draw();
 
         EndDrawing();
     }

@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+        "files.associations": {
+            "ratio": "cpp",
+            "chrono": "cpp",
+            "span": "cpp",
+            "utility": "cpp"
+        }
+    }
+}

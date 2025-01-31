@@ -10,3 +10,6 @@
 [submodule "libraries/fmt"]
 	path = libraries/fmt
 	url = https://github.com/fmtlib/fmt
+[submodule "libraries/timeManager"]
+	path = libraries/timeManager
+	url = https://github.com/Kotuon/timeManager
