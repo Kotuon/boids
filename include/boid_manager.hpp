@@ -21,7 +21,7 @@ private:
 
     Vector2 Bounds;
 
-    static const size_t MAX = 2;
+    static const size_t MAX = 10;
     std::array< BoidPtr, MAX > BoidList;
 };
 

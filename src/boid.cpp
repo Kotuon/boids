@@ -18,15 +18,19 @@ Boid::Boid( Vector2 Position_, float Scale_ )
     : Position( Position_ ), Scale( Scale_ ), Speed( 0.f ), Acceleration( 0.f ),
       Rotation( 0.f ) {}
 
-void Boid::update() {
-    // Position = Vector2Add(
-    //     Position, Vector2Scale( Vector2Rotate( Fwd, Rotation ), Speed ) );
-}
+void Boid::update() {}
 
 void Boid::draw() const {
-    DrawTriangle( Vector2Add( Position, Vector2{ Scale * 2.f, 0.f } ),
-                  Vector2Add( Position, Vector2{ -Scale, -Scale } ),
-                  Vector2Add( Position, Vector2{ -Scale, Scale } ), GREEN );
+    const float Angle = Vector2Angle( Fwd, Velocity );
+
+    DrawTriangle(
+        Vector2Add( Position,
+                    Vector2Rotate( Vector2{ Scale * 2.f, 0.f }, Angle ) ),
+        Vector2Add( Position,
+                    Vector2Rotate( Vector2{ -Scale, -Scale }, Angle ) ),
+        Vector2Add( Position,
+                    Vector2Rotate( Vector2{ -Scale, Scale }, Angle ) ),
+        GREEN );
 }
 
 const Vector2 Boid::boundPosition( const Vector2& Bounds ) const {

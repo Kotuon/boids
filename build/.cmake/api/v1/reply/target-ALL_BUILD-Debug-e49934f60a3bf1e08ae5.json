@@ -20,28 +20,28 @@
 			"id" : "fmt::@02464759dd67601a9918"
 		},
 		{
+			"id" : "crashHandler::@b1fa5d3f0ad1f40d0209"
+		},
+		{
 			"id" : "boids::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "crashHandler::@b1fa5d3f0ad1f40d0209"
+			"id" : "profiler::@00fbca128c70846aff05"
 		},
 		{
 			"id" : "traceSystem::@281bfe23601ef6e9681b"
 		},
 		{
-			"id" : "raylib::@4dc3a4644cf4ded08c01"
-		},
-		{
 			"id" : "timeManager::@88d159df7f4a1061ad26"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"id" : "raylib::@4dc3a4644cf4ded08c01"
 		},
 		{
 			"id" : "glfw::@9de86fbe87260ae8e66c"
 		},
 		{
-			"id" : "profiler::@00fbca128c70846aff05"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"folder" : 

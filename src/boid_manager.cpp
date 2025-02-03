@@ -20,14 +20,8 @@ BoidManager::BoidManager( const Vector2 Bounds_ ) : Bounds( Bounds_ ) {
 
 void BoidManager::update() {
     Vector2 AvgPosition = accumulatePosition();
-    // AvgPosition =
-    //     Vector2Scale( AvgPosition, 1.f / static_cast< float >( MAX ) );
-
     Vector2 AvgVelocity = accumulateVelocity();
-    AvgVelocity =
-        Vector2Scale( AvgVelocity, 1.f / static_cast< float >( MAX ) );
 
-    int i = 0;
     for ( auto& Boid1 : BoidList ) {
         const Vector2 AvgPositionInstance = Vector2Scale(
             Vector2Subtract(
@@ -35,10 +29,15 @@ void BoidManager::update() {
                     Vector2Subtract( AvgPosition, Boid1->getPosition() ),
                     1.f / ( MAX - 1.f ) ),
                 Boid1->getPosition() ),
-            1.f / 100.f );
+            1.f / 1000.f );
 
         const Vector2 AvgVelocityInstance = Vector2Scale(
-            Vector2Subtract( AvgVelocity, Boid1->getVelocity() ), 1.f / 8.f );
+            Vector2Subtract(
+                Vector2Scale(
+                    Vector2Subtract( AvgVelocity, Boid1->getVelocity() ),
+                    1.f / ( MAX - 1 ) ),
+                Boid1->getVelocity() ),
+            1.f / 16.f );
 
         Vector2 BufferDistance( 0.f );
         for ( auto& Boid2 : BoidList ) {
@@ -47,7 +46,7 @@ void BoidManager::update() {
             const Vector2 Between =
                 Vector2Subtract( Boid1->getPosition(), Boid2->getPosition() );
 
-            if ( Vector2Length( Between ) >= 100.f ) continue;
+            if ( Vector2Length( Between ) >= 50.f ) continue;
 
             BufferDistance = Vector2Subtract( BufferDistance, Between );
         }
@@ -56,27 +55,16 @@ void BoidManager::update() {
 
         Boid1->setVelocity( Vector2Add(
             Boid1->getVelocity(),
-            Vector2Add( AvgPosition,
-                        Vector2Add( AvgVelocityInstance,
-                                    Vector2Add( BufferDistance,
-                                                BoundedVelocity ) ) ) ) );
+            Vector2Add(
+                AvgPositionInstance,
+                Vector2Add( AvgVelocityInstance,
+                            Vector2Add( Vector2Normalize( BufferDistance ),
+                                        BoundedVelocity ) ) ) ) );
+    }
 
+    for ( auto& Boid1 : BoidList ) {
         Boid1->setPosition(
             Vector2Add( Boid1->getPosition(), Boid1->getVelocity() ) );
-
-        Trace::message( fmt::format( "       Velocity({}): ({}, {})", i,
-                                     Boid1->getVelocity().x,
-                                     Boid1->getVelocity().y ) );
-        Trace::message( fmt::format( "    AvgPosition({}): ({}, {})", i,
-                                     AvgPosition.x, AvgPosition.y ) );
-        Trace::message( fmt::format( "    AvgVelocity({}): ({}, {})", i,
-                                     AvgVelocityInstance.x,
-                                     AvgVelocityInstance.y ) );
-        Trace::message( fmt::format( " BufferDistance({}): ({}, {})", i,
-                                     BufferDistance.x, BufferDistance.y ) );
-        Trace::message( fmt::format( "BoundedVelocity({}): ({}, {})", i,
-                                     BoundedVelocity.x, BoundedVelocity.y ) );
-        ++i;
     }
 }
 

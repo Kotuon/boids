@@ -28,9 +28,6 @@ int main( int, char** ) {
     BoidManager BoidManagerInstance( Vector2(
         static_cast< float >( WIDTH ), static_cast< float >( HEIGHT ) ) );
 
-    // Boid BoidInstance( Vector2( WIDTH / 2.f, HEIGHT / 2.f ), 7.5f );
-    // BoidInstance.setSpeed( 1.f );
-
     while ( !WindowShouldClose() ) {
         Time.update();
 

@@ -166,7 +166,15 @@
 		},
 		{
 			"backtrace" : 2,
+			"id" : "profiler::@00fbca128c70846aff05"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "traceSystem::@281bfe23601ef6e9681b"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "timeManager::@88d159df7f4a1061ad26"
 		},
 		{
 			"backtrace" : 2,
@@ -174,18 +182,10 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "timeManager::@88d159df7f4a1061ad26"
-		},
-		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "glfw::@9de86fbe87260ae8e66c"
 		},
 		{
-			"backtrace" : 2,
-			"id" : "profiler::@00fbca128c70846aff05"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "boids::@6890427a1f51a3e7e1df",
