@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "_deps/raylib-build/raylib/Release/raylib.lib"
+			"path" : "_deps/raylib-build/raylib/MinSizeRel/raylib.lib"
 		}
 	],
 	"backtrace" : 1,
@@ -138,7 +138,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /MD /O2 /Ob2 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /MD /O1 /Ob1 /DNDEBUG"
 				}
 			],
 			"defines" : 
@@ -192,11 +192,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 5,
-			"id" : "glfw::@9de86fbe87260ae8e66c"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"backtrace" : 5,
+			"id" : "glfw::@9de86fbe87260ae8e66c"
 		}
 	],
 	"id" : "raylib::@4dc3a4644cf4ded08c01",

@@ -21,7 +21,10 @@ private:
 
     Vector2 Bounds;
 
-    static const size_t MAX = 10;
+    float LocalSize = 100.f;
+    float SpeedLimit = 7.f;
+
+    static const size_t MAX = 1000;
     std::array< BoidPtr, MAX > BoidList;
 };
 

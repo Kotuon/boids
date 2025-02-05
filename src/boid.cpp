@@ -6,17 +6,11 @@
 #include <fmt/core.h>
 #include "trace.hpp"
 
-Boid::Boid()
-    : Position( 0.f ), Scale( 7.5f ), Speed( 0.f ), Acceleration( 0.f ),
-      Rotation( 0.f ) {}
+Boid::Boid( const Vector2& Position_, float Scale_ )
+    : Position( Position_ ), Scale( Scale_ ) {}
 
-Boid::Boid( Vector2 Position_ )
-    : Position( Position_ ), Scale( 7.5f ), Speed( 0.f ), Acceleration( 0.f ),
-      Rotation( 0.f ) {}
-
-Boid::Boid( Vector2 Position_, float Scale_ )
-    : Position( Position_ ), Scale( Scale_ ), Speed( 0.f ), Acceleration( 0.f ),
-      Rotation( 0.f ) {}
+Boid::Boid( const Vector2& Position_, const Vector2& Velocity_, float Scale_ )
+    : Position( Position_ ), Velocity( Velocity_ ), Scale( Scale_ ) {}
 
 void Boid::update() {}
 
@@ -48,8 +42,6 @@ const Vector2 Boid::boundPosition( const Vector2& Bounds ) const {
 
     return Result;
 }
-
-void Boid::setSpeed( const float Speed_ ) { Speed = Speed_; }
 
 void Boid::setVelocity( const Vector2 Velocity_ ) { Velocity = Velocity_; }
 void Boid::setPosition( const Vector2 Position_ ) { Position = Position_; }

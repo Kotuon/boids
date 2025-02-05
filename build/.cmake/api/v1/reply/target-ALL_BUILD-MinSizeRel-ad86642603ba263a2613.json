@@ -17,19 +17,19 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "fmt::@02464759dd67601a9918"
+			"id" : "boids::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "traceSystem::@281bfe23601ef6e9681b"
 		},
 		{
 			"id" : "crashHandler::@b1fa5d3f0ad1f40d0209"
 		},
 		{
-			"id" : "boids::@6890427a1f51a3e7e1df"
+			"id" : "fmt::@02464759dd67601a9918"
 		},
 		{
 			"id" : "profiler::@00fbca128c70846aff05"
-		},
-		{
-			"id" : "traceSystem::@281bfe23601ef6e9681b"
 		},
 		{
 			"id" : "timeManager::@88d159df7f4a1061ad26"
@@ -38,10 +38,10 @@
 			"id" : "raylib::@4dc3a4644cf4ded08c01"
 		},
 		{
-			"id" : "glfw::@9de86fbe87260ae8e66c"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"id" : "glfw::@9de86fbe87260ae8e66c"
 		}
 	],
 	"folder" : 
