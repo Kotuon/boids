@@ -9,74 +9,173 @@
 #include "trace.hpp"
 
 BoidManager::BoidManager( const Vector2 Bounds_ ) : Bounds( Bounds_ ) {
+    const float Scale = LocalSize / 13.f;
+
+    LocalSize *= SimScale;
+    SpeedLimit *= SimScale;
+
+    QInstance = std::make_unique< Quadtree >();
+
+    Stp = std::make_unique< StaticThreadPool >();
+    ThreadCount = Stp->getThreadCount();
+
+    Stp->initialize( &BoidManager::updateThreadWorker, this );
+
     for ( size_t i = 0; i < MAX; ++i ) {
-        BoidList[i] = std::make_unique< Boid >(
-            Vector2( static_cast< float >(
-                         GetRandomValue( 0, static_cast< int >( Bounds.x ) ) ),
-                     static_cast< float >( GetRandomValue(
-                         0, static_cast< int >( Bounds.y ) ) ) ) );
+        const Vector2 Pos( static_cast< float >( GetRandomValue(
+                               0, static_cast< int >( Bounds.x ) ) ),
+                           static_cast< float >( GetRandomValue(
+                               0, static_cast< int >( Bounds.y ) ) ) );
+
+        const Vector2 Vel( static_cast< float >( GetRandomValue( -5, 5 ) ),
+                           static_cast< float >( GetRandomValue( -5, 5 ) ) );
+
+        BoidList[i] = std::make_unique< Boid >( Pos, Vel, Scale, SimScale );
+    }
+}
+
+void BoidManager::buildTree() {
+    QInstance->clear();
+    QInstance->initialize( BoidList );
+
+    for ( auto& ThisBoid : BoidList ) {
+        QInstance->insert( ThisBoid.get() );
+    }
+
+    QInstance->propagate();
+}
+
+void BoidManager::updateThread() {
+    UStatus = S_Velocity;
+    Stp->runTask();
+
+    UStatus = S_Position;
+    Stp->runTask();
+
+    // buildTree();
+}
+
+void BoidManager::updateThreadWorker( const size_t ThreadId ) {
+    const size_t Stride = MAX / ThreadCount;
+
+    const size_t Start = ThreadId * Stride;
+
+    size_t End = ( ThreadId + 1 ) * Stride;
+    if ( ThreadId == ThreadCount - 1 ) End = MAX;
+
+    if ( UStatus == S_Velocity ) {
+        for ( size_t i = Start; i < End; ++i ) {
+            auto& Boid1 = BoidList[i];
+
+            Vector2 AvgPosition( 0.f ); // Cohesion
+            Vector2 AvgVelocity( 0.f ); // Alignment
+            Vector2 AvgAvoid( 0.f );    // Seperation
+            size_t Count = 0;
+
+            for ( auto& Boid2 : BoidList ) {
+                const float Distance = Vector2Distance( Boid1->getPosition(),
+                                                        Boid2->getPosition() );
+                if ( Distance >= LocalSize ) continue;
+
+                Count += 1;
+                // Alignment
+                AvgVelocity = Vector2Add( AvgVelocity, Boid2->getVelocity() );
+                // Cohesion
+                AvgPosition = Vector2Add( AvgPosition, Boid2->getPosition() );
+                // Separation
+                if ( Distance >= LocalSize * 0.4f ) continue;
+                AvgAvoid = Vector2Subtract(
+                    AvgAvoid,
+                    Vector2Scale(
+                        Vector2Normalize( Vector2Subtract(
+                            Boid2->getPosition(), Boid1->getPosition() ) ),
+                        10.f / Clamp( Distance, 0.001f, 100.f ) ) );
+            }
+
+            AvgVelocity = Vector2Scale( AvgVelocity, 1.f / ( Count * 8.f ) );
+
+            AvgPosition = Vector2Scale( AvgPosition, 1.f / Count );
+            AvgPosition = Vector2Subtract( AvgPosition, Boid1->getPosition() );
+            AvgPosition = Vector2Scale( AvgPosition, 1.f / 100.f );
+
+            AvgVelocity = Vector2Scale( AvgVelocity, SimScale );
+            AvgPosition = Vector2Scale( AvgPosition, SimScale );
+            AvgAvoid = Vector2Scale( AvgAvoid, SimScale );
+
+            Boid1->setVelocity( Vector2Add(
+                Boid1->getVelocity(),
+                Vector2Add(
+                    AvgVelocity,
+                    Vector2Add( AvgPosition,
+                                Vector2Add( AvgAvoid, Boid1->boundPosition(
+                                                          Bounds ) ) ) ) ) );
+
+            if ( Vector2Length( Boid1->getVelocity() ) > SpeedLimit ) {
+                Boid1->setVelocity( Vector2Scale(
+                    Vector2Normalize( Boid1->getVelocity() ), SpeedLimit ) );
+            }
+        }
+    } else if ( UStatus == S_Position ) {
+        for ( size_t i = Start; i < End; ++i ) {
+            auto& Boid1 = BoidList[i];
+
+            Boid1->setPosition(
+                Vector2Add( Boid1->getPosition(), Boid1->getVelocity() ) );
+        }
     }
 }
 
 void BoidManager::update() {
-    Vector2 AvgPosition = accumulatePosition();
-    // AvgPosition =
-    //     Vector2Scale( AvgPosition, 1.f / static_cast< float >( MAX ) );
-
-    Vector2 AvgVelocity = accumulateVelocity();
-    AvgVelocity =
-        Vector2Scale( AvgVelocity, 1.f / static_cast< float >( MAX ) );
-
-    int i = 0;
     for ( auto& Boid1 : BoidList ) {
-        const Vector2 AvgPositionInstance = Vector2Scale(
-            Vector2Subtract(
-                Vector2Scale(
-                    Vector2Subtract( AvgPosition, Boid1->getPosition() ),
-                    1.f / ( MAX - 1.f ) ),
-                Boid1->getPosition() ),
-            1.f / 100.f );
+        Vector2 AvgPosition( 0.f ); // Cohesion
+        Vector2 AvgVelocity( 0.f ); // Alignment
+        Vector2 AvgAvoid( 0.f );    // Seperation
+        size_t Count = 0;
 
-        const Vector2 AvgVelocityInstance = Vector2Scale(
-            Vector2Subtract( AvgVelocity, Boid1->getVelocity() ), 1.f / 8.f );
-
-        Vector2 BufferDistance( 0.f );
         for ( auto& Boid2 : BoidList ) {
-            if ( Boid1 == Boid2 ) continue;
+            const float Distance =
+                Vector2Distance( Boid1->getPosition(), Boid2->getPosition() );
+            if ( Distance >= LocalSize ) continue;
 
-            const Vector2 Between =
-                Vector2Subtract( Boid1->getPosition(), Boid2->getPosition() );
-
-            if ( Vector2Length( Between ) >= 100.f ) continue;
-
-            BufferDistance = Vector2Subtract( BufferDistance, Between );
+            Count += 1;
+            // Alignment
+            AvgVelocity = Vector2Add( AvgVelocity, Boid2->getVelocity() );
+            // Cohesion
+            AvgPosition = Vector2Add( AvgPosition, Boid2->getPosition() );
+            // Separation
+            if ( Distance >= LocalSize * 0.4f ) continue;
+            AvgAvoid = Vector2Subtract(
+                AvgAvoid,
+                Vector2Scale(
+                    Vector2Normalize( Vector2Subtract( Boid2->getPosition(),
+                                                       Boid1->getPosition() ) ),
+                    10.f / Clamp( Distance, 0.001f, 100.f ) ) );
         }
 
-        const Vector2 BoundedVelocity = Boid1->boundPosition( Bounds );
+        AvgVelocity = Vector2Scale( AvgVelocity, 1.f / Count );
+        AvgVelocity = Vector2Scale( AvgVelocity, 1.f / 8.f );
+
+        AvgPosition = Vector2Scale( AvgPosition, 1.f / Count );
+        AvgPosition = Vector2Subtract( AvgPosition, Boid1->getPosition() );
+        AvgPosition = Vector2Scale( AvgPosition, 1.f / 100.f );
 
         Boid1->setVelocity( Vector2Add(
             Boid1->getVelocity(),
-            Vector2Add( AvgPosition,
-                        Vector2Add( AvgVelocityInstance,
-                                    Vector2Add( BufferDistance,
-                                                BoundedVelocity ) ) ) ) );
+            Vector2Add(
+                AvgVelocity,
+                Vector2Add( AvgPosition,
+                            Vector2Add( AvgAvoid, Boid1->boundPosition(
+                                                      Bounds ) ) ) ) ) );
 
+        if ( Vector2Length( Boid1->getVelocity() ) > SpeedLimit ) {
+            Boid1->setVelocity( Vector2Scale(
+                Vector2Normalize( Boid1->getVelocity() ), SpeedLimit ) );
+        }
+    }
+
+    for ( auto& Boid1 : BoidList ) {
         Boid1->setPosition(
             Vector2Add( Boid1->getPosition(), Boid1->getVelocity() ) );
-
-        Trace::message( fmt::format( "       Velocity({}): ({}, {})", i,
-                                     Boid1->getVelocity().x,
-                                     Boid1->getVelocity().y ) );
-        Trace::message( fmt::format( "    AvgPosition({}): ({}, {})", i,
-                                     AvgPosition.x, AvgPosition.y ) );
-        Trace::message( fmt::format( "    AvgVelocity({}): ({}, {})", i,
-                                     AvgVelocityInstance.x,
-                                     AvgVelocityInstance.y ) );
-        Trace::message( fmt::format( " BufferDistance({}): ({}, {})", i,
-                                     BufferDistance.x, BufferDistance.y ) );
-        Trace::message( fmt::format( "BoundedVelocity({}): ({}, {})", i,
-                                     BoundedVelocity.x, BoundedVelocity.y ) );
-        ++i;
     }
 }
 

@@ -6,27 +6,30 @@
 #include <fmt/core.h>
 #include "trace.hpp"
 
-Boid::Boid()
-    : Position( 0.f ), Scale( 7.5f ), Speed( 0.f ), Acceleration( 0.f ),
-      Rotation( 0.f ) {}
+Boid::Boid( const Vector2& Position_, const float Scale_ )
+    : Position( Position_ ), Scale( Scale_ ) {}
 
-Boid::Boid( Vector2 Position_ )
-    : Position( Position_ ), Scale( 7.5f ), Speed( 0.f ), Acceleration( 0.f ),
-      Rotation( 0.f ) {}
+Boid::Boid( const Vector2& Position_, const Vector2& Velocity_,
+            const float Scale_, const float SimScale_ )
+    : Position( Position_ ), Velocity( Velocity_ ), Scale( Scale_ ),
+      SimScale( SimScale_ ) {}
 
-Boid::Boid( Vector2 Position_, float Scale_ )
-    : Position( Position_ ), Scale( Scale_ ), Speed( 0.f ), Acceleration( 0.f ),
-      Rotation( 0.f ) {}
-
-void Boid::update() {
-    // Position = Vector2Add(
-    //     Position, Vector2Scale( Vector2Rotate( Fwd, Rotation ), Speed ) );
-}
+void Boid::update() {}
 
 void Boid::draw() const {
-    DrawTriangle( Vector2Add( Position, Vector2{ Scale * 2.f, 0.f } ),
-                  Vector2Add( Position, Vector2{ -Scale, -Scale } ),
-                  Vector2Add( Position, Vector2{ -Scale, Scale } ), GREEN );
+    const float Angle = Vector2Angle( Fwd, Velocity );
+
+    DrawTriangle(
+        Vector2Add(
+            Position,
+            Vector2Rotate( Vector2{ SimScale * Scale * 2.f, 0.f }, Angle ) ),
+        Vector2Add( Position, Vector2Rotate( Vector2{ SimScale * -Scale,
+                                                      SimScale * -Scale },
+                                             Angle ) ),
+        Vector2Add( Position, Vector2Rotate( Vector2{ SimScale * -Scale,
+                                                      SimScale * Scale },
+                                             Angle ) ),
+        GREEN );
 }
 
 const Vector2 Boid::boundPosition( const Vector2& Bounds ) const {
@@ -45,10 +48,8 @@ const Vector2 Boid::boundPosition( const Vector2& Bounds ) const {
     return Result;
 }
 
-void Boid::setSpeed( const float Speed_ ) { Speed = Speed_; }
-
-void Boid::setVelocity( const Vector2 Velocity_ ) { Velocity = Velocity_; }
-void Boid::setPosition( const Vector2 Position_ ) { Position = Position_; }
+void Boid::setVelocity( const Vector2& Velocity_ ) { Velocity = Velocity_; }
+void Boid::setPosition( const Vector2& Position_ ) { Position = Position_; }
 
 const Vector2& Boid::getPosition() const { return Position; }
 

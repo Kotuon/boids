@@ -22,6 +22,10 @@ BUILD_SHARED_LIBS:BOOL=OFF
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/lib.exe
 
+//For backwards compatibility, what version of CMake commands and
+// syntax should this version of CMake try to support.
+CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
+
 //Semicolon separated list of supported configuration types, only
 // supports Debug, Release, MinSizeRel, and RelWithDebInfo, anything
 // else will be ignored.
@@ -275,6 +279,9 @@ ENABLE_MSAN:BOOL=OFF
 //Enable UndefinedBehaviorSanitizer (UBSan) for debugging
 ENABLE_UBSAN:BOOL=OFF
 
+//Single output directory for building all executables.
+EXECUTABLE_OUTPUT_PATH:PATH=
+
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=C:/Users/Kelson/Documents/Projects/boids/build/_deps
 
@@ -395,6 +402,9 @@ GLFW_USE_WAYLAND:BOOL=
 //Include everything disabled by default (for CI usage
 INCLUDE_EVERYTHING:BOOL=OFF
 
+//Single output directory for building all libraries.
+LIBRARY_OUTPUT_PATH:PATH=
+
 //Build fat library for both i386 and x86_64 on macOS
 MACOS_FATLIB:BOOL=OFF
 
@@ -460,6 +470,15 @@ raylib_LIB_DEPENDS:STATIC=general;opengl32;glu32;winmm;glfw;
 
 //Value Computed by CMake
 raylib_SOURCE_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/build/_deps/raylib-src/src
+
+//Value Computed by CMake
+threadPool_BINARY_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/build/libraries/threadPool
+
+//Value Computed by CMake
+threadPool_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+threadPool_SOURCE_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/libraries/threadPool
 
 //Value Computed by CMake
 timeManager_BINARY_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/build/libraries/timeManager
@@ -602,7 +621,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

@@ -16,6 +16,8 @@ constexpr int HEIGHT = 720;
 #include "boid.hpp"
 #include "boid_manager.hpp"
 
+#include "timer.hpp"
+
 int main( int, char** ) {
     setupDump();
 
@@ -23,13 +25,12 @@ int main( int, char** ) {
 
     TimeManager Time;
 
-    Profiler Profiler;
+    Timer TimerInstance;
+
+    Profiler Profiler( 100000 );
 
     BoidManager BoidManagerInstance( Vector2(
         static_cast< float >( WIDTH ), static_cast< float >( HEIGHT ) ) );
-
-    // Boid BoidInstance( Vector2( WIDTH / 2.f, HEIGHT / 2.f ), 7.5f );
-    // BoidInstance.setSpeed( 1.f );
 
     while ( !WindowShouldClose() ) {
         Time.update();
@@ -40,13 +41,24 @@ int main( int, char** ) {
 
         while ( Time.needsFixedUpdate() ) {
             // Fixed update here
-            BoidManagerInstance.update();
+
+            BoidManagerInstance.updateThread();
         }
 
         // Frame update here
 
         BeginDrawing();
         ClearBackground( DARKGRAY );
+
+        auto& Quads = BoidManagerInstance.getQuadtree()->getNodes();
+
+        for ( const auto& Q : Quads ) {
+            const float HalfWidth = Q->Size / 2.f;
+            const Vector2 Pos = Vector2SubtractValue( Q->Center, HalfWidth );
+
+            DrawRectangleLinesEx( { Pos.x, Pos.y, Q->Size, Q->Size }, 1.f,
+                                  RED );
+        }
 
         // Draw here
         BoidManagerInstance.draw();
