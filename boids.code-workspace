@@ -9,7 +9,9 @@
             "ratio": "cpp",
             "chrono": "cpp",
             "span": "cpp",
-            "utility": "cpp"
+            "utility": "cpp",
+            "array": "cpp",
+            "memory": "cpp"
         }
     }
 }

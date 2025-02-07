@@ -13,3 +13,6 @@
 [submodule "libraries/timeManager"]
 	path = libraries/timeManager
 	url = https://github.com/Kotuon/timeManager
+[submodule "libraries/threadPool"]
+	path = libraries/threadPool
+	url = https://github.com/Kotuon/threadPool

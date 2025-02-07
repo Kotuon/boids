@@ -1,0 +1,1992 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"build" : "libraries/fmt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libraries.fmt-Debug-2ff20ba4b8cd5758539d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libraries/fmt",
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"build" : "libraries/traceSystem",
+					"jsonFile" : "directory-libraries.traceSystem-Debug-7a6d0e3f78386787c1dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "libraries/traceSystem",
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"build" : "libraries/crashHandler",
+					"jsonFile" : "directory-libraries.crashHandler-Debug-b5185f2f325d2b20cd19.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libraries/crashHandler",
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"build" : "libraries/profiler",
+					"jsonFile" : "directory-libraries.profiler-Debug-9c8c7de3ad5fed8cd76b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "libraries/profiler",
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"build" : "libraries/timeManager",
+					"jsonFile" : "directory-libraries.timeManager-Debug-e5d1233ad93f94479c68.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "libraries/timeManager",
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"build" : "libraries/threadPool",
+					"jsonFile" : "directory-libraries.threadPool-Debug-6794e863efcf2d518983.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "libraries/threadPool",
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"build" : "_deps/raylib-build",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build-Debug-2303bef9017bcf270a7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src",
+					"targetIndexes" : 
+					[
+						0,
+						19
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib",
+					"childIndexes" : 
+					[
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build.raylib-Debug-0be66e44683b1f2e3535.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src/src",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						10
+					],
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw-Debug-8219a38247db7ce6b095.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw/src",
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw.src-Debug-037601a9a93b4192d4c3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						13,
+						20
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "boids",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "traceSystem",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crashHandler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "profiler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "timeManager",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "threadPool",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						8
+					],
+					"directoryIndexes" : 
+					[
+						7,
+						8
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						15,
+						19
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9,
+						10
+					],
+					"name" : "GLFW",
+					"parentIndex" : 7,
+					"targetIndexes" : 
+					[
+						8,
+						13,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@1f4ba659214c9866b353",
+					"jsonFile" : "target-ALL_BUILD-Debug-587abe05a7db4f2fa0d6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-ALL_BUILD-Debug-f0fd32fded06e2e2fef6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-3208d2194313a6739869.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@c72df87bf75169007c83",
+					"jsonFile" : "target-ALL_BUILD-Debug-c44e0d236cdbb0711e07.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@02464759dd67601a9918",
+					"jsonFile" : "target-ALL_BUILD-Debug-a8162f47928edcf2dbaf.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@00fbca128c70846aff05",
+					"jsonFile" : "target-ALL_BUILD-Debug-dfe9efeb9b9b14358b71.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-ALL_BUILD-Debug-ab02b9ae52d59b6ad825.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-ALL_BUILD-Debug-ba7da84c53854c74e47e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "ALL_BUILD::@abb1d9e801b084c7b6bd",
+					"jsonFile" : "target-ALL_BUILD-Debug-6d0a62c55aac31c6e82d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-d4b4cab097932cd4e464.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "boids::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-boids-Debug-f703ba2e62348d068d5c.json",
+					"name" : "boids",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crashHandler::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-crashHandler-Debug-c0e000f4c4c30bbafee6.json",
+					"name" : "crashHandler",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "fmt::@02464759dd67601a9918",
+					"jsonFile" : "target-fmt-Debug-caf0bab44ac7b412ca68.json",
+					"name" : "fmt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "glfw::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-glfw-Debug-4bf758dc22e6214d429b.json",
+					"name" : "glfw",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "profiler::@00fbca128c70846aff05",
+					"jsonFile" : "target-profiler-Debug-4da0680d2b39403903ad.json",
+					"name" : "profiler",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "raylib::@4dc3a4644cf4ded08c01",
+					"jsonFile" : "target-raylib-Debug-b6891b4a7635b37477df.json",
+					"name" : "raylib",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "threadPool::@c72df87bf75169007c83",
+					"jsonFile" : "target-threadPool-Debug-04789e00a77e75a2026a.json",
+					"name" : "threadPool",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "timeManager::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-timeManager-Debug-8aefb77e4089a20feb5f.json",
+					"name" : "timeManager",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "traceSystem::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-traceSystem-Debug-fddd2f15de6c94153323.json",
+					"name" : "traceSystem",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "uninstall::@1f4ba659214c9866b353",
+					"jsonFile" : "target-uninstall-Debug-6e67dabbe1ab87f37ab5.json",
+					"name" : "uninstall",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "update_mappings::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-update_mappings-Debug-b1c8fdc0276d94ec02c7.json",
+					"name" : "update_mappings",
+					"projectIndex" : 8
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"build" : "libraries/fmt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libraries.fmt-Release-e39bfdeaff649f986d42.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libraries/fmt",
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"build" : "libraries/traceSystem",
+					"jsonFile" : "directory-libraries.traceSystem-Release-7a6d0e3f78386787c1dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "libraries/traceSystem",
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"build" : "libraries/crashHandler",
+					"jsonFile" : "directory-libraries.crashHandler-Release-b5185f2f325d2b20cd19.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libraries/crashHandler",
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"build" : "libraries/profiler",
+					"jsonFile" : "directory-libraries.profiler-Release-9c8c7de3ad5fed8cd76b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "libraries/profiler",
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"build" : "libraries/timeManager",
+					"jsonFile" : "directory-libraries.timeManager-Release-e5d1233ad93f94479c68.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "libraries/timeManager",
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"build" : "libraries/threadPool",
+					"jsonFile" : "directory-libraries.threadPool-Release-6794e863efcf2d518983.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "libraries/threadPool",
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"build" : "_deps/raylib-build",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build-Release-2303bef9017bcf270a7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src",
+					"targetIndexes" : 
+					[
+						0,
+						19
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib",
+					"childIndexes" : 
+					[
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build.raylib-Release-d1398b51cd9e7276409a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src/src",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						10
+					],
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw-Release-8219a38247db7ce6b095.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw/src",
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw.src-Release-037601a9a93b4192d4c3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						13,
+						20
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "boids",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "traceSystem",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crashHandler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "profiler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "timeManager",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "threadPool",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						8
+					],
+					"directoryIndexes" : 
+					[
+						7,
+						8
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						15,
+						19
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9,
+						10
+					],
+					"name" : "GLFW",
+					"parentIndex" : 7,
+					"targetIndexes" : 
+					[
+						8,
+						13,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@1f4ba659214c9866b353",
+					"jsonFile" : "target-ALL_BUILD-Release-587abe05a7db4f2fa0d6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-ALL_BUILD-Release-f0fd32fded06e2e2fef6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-3208d2194313a6739869.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@c72df87bf75169007c83",
+					"jsonFile" : "target-ALL_BUILD-Release-c44e0d236cdbb0711e07.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@02464759dd67601a9918",
+					"jsonFile" : "target-ALL_BUILD-Release-a8162f47928edcf2dbaf.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@00fbca128c70846aff05",
+					"jsonFile" : "target-ALL_BUILD-Release-dfe9efeb9b9b14358b71.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-ALL_BUILD-Release-ab02b9ae52d59b6ad825.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-ALL_BUILD-Release-ba7da84c53854c74e47e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "ALL_BUILD::@abb1d9e801b084c7b6bd",
+					"jsonFile" : "target-ALL_BUILD-Release-6d0a62c55aac31c6e82d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-d4b4cab097932cd4e464.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "boids::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-boids-Release-d553af15bf7c156e8e12.json",
+					"name" : "boids",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crashHandler::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-crashHandler-Release-5f94a85bdddfca11cc93.json",
+					"name" : "crashHandler",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "fmt::@02464759dd67601a9918",
+					"jsonFile" : "target-fmt-Release-9096ea961676d2f841e7.json",
+					"name" : "fmt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "glfw::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-glfw-Release-a80b6f2057f10d8140c7.json",
+					"name" : "glfw",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "profiler::@00fbca128c70846aff05",
+					"jsonFile" : "target-profiler-Release-3c420885db1642672704.json",
+					"name" : "profiler",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "raylib::@4dc3a4644cf4ded08c01",
+					"jsonFile" : "target-raylib-Release-c05a11eecc8ffc227283.json",
+					"name" : "raylib",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "threadPool::@c72df87bf75169007c83",
+					"jsonFile" : "target-threadPool-Release-45090c1e1f146ce82c3f.json",
+					"name" : "threadPool",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "timeManager::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-timeManager-Release-01633e59a129b1708bc3.json",
+					"name" : "timeManager",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "traceSystem::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-traceSystem-Release-5bea16d4514350b8f053.json",
+					"name" : "traceSystem",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "uninstall::@1f4ba659214c9866b353",
+					"jsonFile" : "target-uninstall-Release-6e67dabbe1ab87f37ab5.json",
+					"name" : "uninstall",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "update_mappings::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-update_mappings-Release-b1c8fdc0276d94ec02c7.json",
+					"name" : "update_mappings",
+					"projectIndex" : 8
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"build" : "libraries/fmt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libraries.fmt-MinSizeRel-9fd26e324f2fe976efe1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libraries/fmt",
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"build" : "libraries/traceSystem",
+					"jsonFile" : "directory-libraries.traceSystem-MinSizeRel-7a6d0e3f78386787c1dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "libraries/traceSystem",
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"build" : "libraries/crashHandler",
+					"jsonFile" : "directory-libraries.crashHandler-MinSizeRel-b5185f2f325d2b20cd19.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libraries/crashHandler",
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"build" : "libraries/profiler",
+					"jsonFile" : "directory-libraries.profiler-MinSizeRel-9c8c7de3ad5fed8cd76b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "libraries/profiler",
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"build" : "libraries/timeManager",
+					"jsonFile" : "directory-libraries.timeManager-MinSizeRel-e5d1233ad93f94479c68.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "libraries/timeManager",
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"build" : "libraries/threadPool",
+					"jsonFile" : "directory-libraries.threadPool-MinSizeRel-6794e863efcf2d518983.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "libraries/threadPool",
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"build" : "_deps/raylib-build",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build-MinSizeRel-2303bef9017bcf270a7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src",
+					"targetIndexes" : 
+					[
+						0,
+						19
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib",
+					"childIndexes" : 
+					[
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build.raylib-MinSizeRel-9e32a648de652cc52bee.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src/src",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						10
+					],
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw-MinSizeRel-8219a38247db7ce6b095.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw/src",
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw.src-MinSizeRel-037601a9a93b4192d4c3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						13,
+						20
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "boids",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "traceSystem",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crashHandler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "profiler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "timeManager",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "threadPool",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						8
+					],
+					"directoryIndexes" : 
+					[
+						7,
+						8
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						15,
+						19
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9,
+						10
+					],
+					"name" : "GLFW",
+					"parentIndex" : 7,
+					"targetIndexes" : 
+					[
+						8,
+						13,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@1f4ba659214c9866b353",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-587abe05a7db4f2fa0d6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-f0fd32fded06e2e2fef6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-3208d2194313a6739869.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@c72df87bf75169007c83",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-c44e0d236cdbb0711e07.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@02464759dd67601a9918",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-a8162f47928edcf2dbaf.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@00fbca128c70846aff05",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-dfe9efeb9b9b14358b71.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-ab02b9ae52d59b6ad825.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-ba7da84c53854c74e47e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "ALL_BUILD::@abb1d9e801b084c7b6bd",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-6d0a62c55aac31c6e82d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-d4b4cab097932cd4e464.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "boids::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-boids-MinSizeRel-ac79d53e0c7ea5ad2087.json",
+					"name" : "boids",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crashHandler::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-crashHandler-MinSizeRel-660c9bf72c4bc9366615.json",
+					"name" : "crashHandler",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "fmt::@02464759dd67601a9918",
+					"jsonFile" : "target-fmt-MinSizeRel-9695bd2c0c39a32043cd.json",
+					"name" : "fmt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "glfw::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-glfw-MinSizeRel-115bac8e84244fbdaf6d.json",
+					"name" : "glfw",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "profiler::@00fbca128c70846aff05",
+					"jsonFile" : "target-profiler-MinSizeRel-882edcb15f51452fcfd1.json",
+					"name" : "profiler",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "raylib::@4dc3a4644cf4ded08c01",
+					"jsonFile" : "target-raylib-MinSizeRel-7a63bc27a91bcd4868be.json",
+					"name" : "raylib",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "threadPool::@c72df87bf75169007c83",
+					"jsonFile" : "target-threadPool-MinSizeRel-c98db072cbb039f96e91.json",
+					"name" : "threadPool",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "timeManager::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-timeManager-MinSizeRel-ed7c3703d5459b7cf011.json",
+					"name" : "timeManager",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "traceSystem::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-traceSystem-MinSizeRel-b322bdb49272911e3684.json",
+					"name" : "traceSystem",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "uninstall::@1f4ba659214c9866b353",
+					"jsonFile" : "target-uninstall-MinSizeRel-6e67dabbe1ab87f37ab5.json",
+					"name" : "uninstall",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "update_mappings::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-update_mappings-MinSizeRel-b1c8fdc0276d94ec02c7.json",
+					"name" : "update_mappings",
+					"projectIndex" : 8
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"build" : "libraries/fmt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libraries.fmt-RelWithDebInfo-00b4618c81cbf306a9f2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libraries/fmt",
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"build" : "libraries/traceSystem",
+					"jsonFile" : "directory-libraries.traceSystem-RelWithDebInfo-7a6d0e3f78386787c1dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "libraries/traceSystem",
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"build" : "libraries/crashHandler",
+					"jsonFile" : "directory-libraries.crashHandler-RelWithDebInfo-b5185f2f325d2b20cd19.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "libraries/crashHandler",
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"build" : "libraries/profiler",
+					"jsonFile" : "directory-libraries.profiler-RelWithDebInfo-9c8c7de3ad5fed8cd76b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "libraries/profiler",
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"build" : "libraries/timeManager",
+					"jsonFile" : "directory-libraries.timeManager-RelWithDebInfo-e5d1233ad93f94479c68.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "libraries/timeManager",
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"build" : "libraries/threadPool",
+					"jsonFile" : "directory-libraries.threadPool-RelWithDebInfo-6794e863efcf2d518983.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "libraries/threadPool",
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"build" : "_deps/raylib-build",
+					"childIndexes" : 
+					[
+						8
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build-RelWithDebInfo-2303bef9017bcf270a7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src",
+					"targetIndexes" : 
+					[
+						0,
+						19
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib",
+					"childIndexes" : 
+					[
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.raylib-build.raylib-RelWithDebInfo-9c46e77290fb903d0211.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 7,
+					"source" : "build/_deps/raylib-src/src",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw",
+					"childIndexes" : 
+					[
+						10
+					],
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw-RelWithDebInfo-8219a38247db7ce6b095.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "_deps/raylib-build/raylib/external/glfw/src",
+					"jsonFile" : "directory-_deps.raylib-build.raylib.external.glfw.src-RelWithDebInfo-037601a9a93b4192d4c3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 8,
+					"source" : "build/_deps/raylib-src/src/external/glfw/src",
+					"targetIndexes" : 
+					[
+						13,
+						20
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "boids",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4,
+						12
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "traceSystem",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						18
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crashHandler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "profiler",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "timeManager",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "threadPool",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						16
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						8
+					],
+					"directoryIndexes" : 
+					[
+						7,
+						8
+					],
+					"name" : "raylib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						15,
+						19
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9,
+						10
+					],
+					"name" : "GLFW",
+					"parentIndex" : 7,
+					"targetIndexes" : 
+					[
+						8,
+						13,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@1f4ba659214c9866b353",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-587abe05a7db4f2fa0d6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-f0fd32fded06e2e2fef6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-3208d2194313a6739869.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@c72df87bf75169007c83",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-c44e0d236cdbb0711e07.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@02464759dd67601a9918",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-a8162f47928edcf2dbaf.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@00fbca128c70846aff05",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-dfe9efeb9b9b14358b71.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-ab02b9ae52d59b6ad825.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-ba7da84c53854c74e47e.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "ALL_BUILD::@abb1d9e801b084c7b6bd",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-6d0a62c55aac31c6e82d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-d4b4cab097932cd4e464.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "boids::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-boids-RelWithDebInfo-1d576fe8b2b29e856d27.json",
+					"name" : "boids",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crashHandler::@b1fa5d3f0ad1f40d0209",
+					"jsonFile" : "target-crashHandler-RelWithDebInfo-16a7bb6e7334d88cf66b.json",
+					"name" : "crashHandler",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "fmt::@02464759dd67601a9918",
+					"jsonFile" : "target-fmt-RelWithDebInfo-e8249d74dc6b88dbc482.json",
+					"name" : "fmt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "glfw::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-glfw-RelWithDebInfo-990cc661a1dda1faf95a.json",
+					"name" : "glfw",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "profiler::@00fbca128c70846aff05",
+					"jsonFile" : "target-profiler-RelWithDebInfo-faab6ee211855a277353.json",
+					"name" : "profiler",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "raylib::@4dc3a4644cf4ded08c01",
+					"jsonFile" : "target-raylib-RelWithDebInfo-3aa4f27c6f17e16f6f20.json",
+					"name" : "raylib",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "threadPool::@c72df87bf75169007c83",
+					"jsonFile" : "target-threadPool-RelWithDebInfo-9408dd11ae43f9361a71.json",
+					"name" : "threadPool",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "timeManager::@88d159df7f4a1061ad26",
+					"jsonFile" : "target-timeManager-RelWithDebInfo-01d9e8582f504b22d555.json",
+					"name" : "timeManager",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "traceSystem::@281bfe23601ef6e9681b",
+					"jsonFile" : "target-traceSystem-RelWithDebInfo-c1f9514075af53325e53.json",
+					"name" : "traceSystem",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "uninstall::@1f4ba659214c9866b353",
+					"jsonFile" : "target-uninstall-RelWithDebInfo-6e67dabbe1ab87f37ab5.json",
+					"name" : "uninstall",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "update_mappings::@9de86fbe87260ae8e66c",
+					"jsonFile" : "target-update_mappings-RelWithDebInfo-b1c8fdc0276d94ec02c7.json",
+					"name" : "update_mappings",
+					"projectIndex" : 8
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Kelson/Documents/Projects/boids/build",
+		"source" : "C:/Users/Kelson/Documents/Projects/boids"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

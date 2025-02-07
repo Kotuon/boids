@@ -7,15 +7,27 @@
 
 #include "boid.hpp"
 
+#include "static_thread_pool.hpp"
+#include "quadtree.hpp"
+
 struct Vector2;
+
+enum UpdateStatus { S_Velocity, S_Position };
 
 class BoidManager {
 public:
     BoidManager( const Vector2 Bounds_ );
+    void updateThread();
     void update();
     void draw() const;
 
+    const std::unique_ptr< Quadtree >& getQuadtree() const { return QInstance; }
+
 private:
+    void buildTree();
+
+    void updateThreadWorker( const size_t ThreadId );
+
     Vector2 accumulatePosition() const;
     Vector2 accumulateVelocity() const;
 
@@ -24,8 +36,17 @@ private:
     float LocalSize = 100.f;
     float SpeedLimit = 7.f;
 
-    static const size_t MAX = 1000;
+    float SimScale = 0.5f;
+
+    static const size_t MAX = 6000;
     std::array< BoidPtr, MAX > BoidList;
+
+    std::unique_ptr< StaticThreadPool > Stp;
+    std::unique_ptr< Quadtree > QInstance;
+
+    size_t ThreadCount;
+
+    UpdateStatus UStatus = S_Velocity;
 };
 
 #endif

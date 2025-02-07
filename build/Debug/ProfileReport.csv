@@ -1,213 +1,65 @@
 Function, Hit Count, Percentage
-"NtFindAtom",544,5.440000%
-"NtUserMessageCall",2387,23.870001%
-"NtUserPeekMessage",277,2.770000%
-"ZwWaitForSingleObject",140,1.400000%
-"NtUserSetTimer",1,0.010000%
-"sqrtf",502,5.020000%
-"Boid::getPosition",180,1.800000%
-"BoidManager::update",1516,15.160000%
-"Vector2Distance",498,4.980000%
-"ILT+9120(??C?$unique_ptrVBoidU?$default_deleteVBoidstdstdQEBAPEAVBoidXZ)",94,0.940000%
-"Vector2Add",212,2.120000%
-"std::unique_ptr<Boid,std::default_delete<Boid> >::operator->",133,1.330000%
-"cosf",76,0.760000%
-"NtUserWindowFromDC",935,9.350000%
-"RtlSetUserValueHeap",3,0.030000%
-"rlVertex3f",324,3.240000%
-"Vector2Rotate",170,1.700000%
-"NtUserGetKeyState",359,3.590000%
-"sinf",52,0.520000%
-"RtlEnterCriticalSection",4,0.040000%
-"Boid::draw",173,1.730000%
-"NtUserGetProp",308,3.080000%
-"atan2f",336,3.360000%
-"DrawTriangle",27,0.270000%
-"HeapValidate",2,0.020000%
-"RtlReleaseRelativeName",4,0.040000%
-"NtUserGetThreadState",106,1.060000%
-"Vector2Angle",49,0.490000%
-"ZwQueryLicenseValue",22,0.220000%
-"Boid::getVelocity",10,0.100000%
-"rlTexCoord2f",43,0.430000%
-"memset",10,0.100000%
-"RtlAnsiStringToUnicodeString",4,0.040000%
-"fmt::v11::basic_string_view<char>::size",2,0.020000%
-"NtSetEvent",15,0.150000%
-"_RTC_CheckStackVars",68,0.680000%
-"RtlAllocateHeap",12,0.120000%
-"rlSetTexture",14,0.140000%
-"MultiByteToWideChar",3,0.030000%
-"Boid::setVelocity",1,0.010000%
-"fmt::v11::detail::buffer<char>::append<char>",3,0.030000%
-"rlBegin",6,0.060000%
-"fmt::v11::detail::fractional_part_rounding_thresholds",1,0.010000%
-"fmt::v11::basic_format_args<fmt::v11::context>::get",1,0.010000%
-"RtlSetLastWin32Error",1,0.010000%
-"fmt::v11::detail::buffer<char>::try_reserve",1,0.010000%
-"CallWindowProcW",1,0.010000%
-"LdrControlFlowGuardEnforced",2,0.020000%
-"Vector2Normalize",11,0.110000%
-"RtlInitUnicodeString",2,0.020000%
-"LdrGetProcedureAddressForCaller",5,0.050000%
-"Vector2Scale",13,0.130000%
-"ILT+3395(rlVertex2f)",9,0.090000%
-"recalloc",1,0.010000%
-"fmt::v11::detail::parse_format_string<char,fmt::v11::detail::format_handler<char> >",1,0.010000%
-"NtGdiGetDCDword",16,0.160000%
-"free_base",1,0.010000%
-"Vector2Subtract",15,0.150000%
-"GetCurrentProcess",1,0.010000%
-"rlVertex2f",13,0.130000%
-"std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >",1,0.010000%
-"std::_Get_size_of_n<16>",1,0.010000%
-"RtlFlsGetValue",4,0.040000%
-"glPushClientAttrib",3,0.030000%
-"glfwSwapBuffers",2,0.020000%
-"RtlEqualUnicodeString",6,0.060000%
-"LdrLoadDll",2,0.020000%
-"ILT+3835(?getPositionBoidQEBAAEBUVector2XZ)",1,0.010000%
-"gladLoadGL",4,0.040000%
-"wglGetPixelFormat",1,0.010000%
-"fmt::v11::detail::buffer<char>::data",1,0.010000%
-"DrvPresentBuffers",24,0.240000%
-"BoidManager::draw",3,0.030000%
-"rlDrawRenderBatch",5,0.050000%
-"std::_String_val<std::_Simple_types<char> >::_String_val<std::_Simple_types<char> >",1,0.010000%
-"fmt::v11::basic_memory_buffer<char,500,fmt::v11::detail::allocator<char> >::~basic_memory_buffer<char,500,fmt::v11::detail::allocator<char> >",1,0.010000%
-"RtlDosPathNameToNtPathName_U",1,0.010000%
-"fmt::v11::basic_format_arg<fmt::v11::context>::basic_format_arg<fmt::v11::context>",1,0.010000%
-"RtlStronglyEnumerateEntryHashTable",4,0.040000%
-"calloc_base",11,0.110000%
-"LdrFindEntryForAddress",2,0.020000%
-"RtlGetFullPathName_UstrEx",2,0.020000%
-"fmt::v11::detail::digit_grouping<char>::digit_grouping<char><fmt::v11::detail::locale_ref,0>",2,0.020000%
-"fmt::v11::detail::reserve<char>",1,0.010000%
-"ILT+12555(rlTexCoord2f)",1,0.010000%
-"memcpy",1,0.010000%
-"GetWindowLongW",2,0.020000%
-"fmt::v11::detail::format_float<double>",5,0.050000%
-"glfwJoystickPresent",2,0.020000%
-"std::_Lockit::_Lockit",3,0.030000%
-"IsCompositionActive",4,0.040000%
-"RtlRetrieveNtUserPfn",3,0.030000%
-"GetCurrentThreadId",1,0.010000%
-"DrvValidateVersion",1,0.010000%
-"ZwQueryInformationProcess",5,0.050000%
-"TimeManager::update",1,0.010000%
-"free",1,0.010000%
-"std::array<std::unique_ptr<Boid,std::default_delete<Boid> >,1000>::_Unchecked_end",1,0.010000%
-"std::addressof<char *>",1,0.010000%
-"DrvSwapLayerBuffers",3,0.030000%
-"std::_Unfancy<char>",1,0.010000%
-"std::_String_val<std::_Simple_types<char> >::_Bxty::~_Bxty",1,0.010000%
-"GetWindowTextW",1,0.010000%
-"operator new",1,0.010000%
-"RtlUTF8ToUnicodeN",1,0.010000%
-"cgetws",1,0.010000%
-"PollInputEvents",5,0.050000%
-"GetPropW",1,0.010000%
-"RtlVerifyVersionInfo",2,0.020000%
-"RtlInitAnsiStringEx",4,0.040000%
-"std::_Narrow_char_traits<char,int>::assign",2,0.020000%
-"fmt::v11::detail::dragonbox::cache_accessor<double>::get_cached_power",1,0.010000%
-"fmt::v11::detail::exponent_bias<double>",1,0.010000%
-"std::_Deallocate<16,0>",1,0.010000%
-"std::_Lockit::~_Lockit",1,0.010000%
-"GetWindowLongPtrW",1,0.010000%
-"wglSwapBuffers",3,0.030000%
-"std::_Construct_in_place<std::_Container_proxy,std::_Container_base12 *>",1,0.010000%
-"RtlAcquireSRWLockExclusive",1,0.010000%
-"fmt::v11::basic_appender<char>::operator++",1,0.010000%
-"rlColor4ub",8,0.080000%
-"RtlValidateHeap",3,0.030000%
-"glfwGetTime",2,0.020000%
-"rlClearColor",2,0.020000%
-"fmt::v11::detail::buffer<char>::size",2,0.020000%
-"RtlGetCurrentServiceSessionId",3,0.030000%
-"NtCallbackReturn",6,0.060000%
-"RtlUnlockHeap",1,0.010000%
-"glfw_free",1,0.010000%
-"fmt::v11::parse_context<char>::next_arg_id",1,0.010000%
-"fmt::v11::detail::dragonbox::umul128_upper64",1,0.010000%
-"GetClassNameA",2,0.020000%
-"glfwGetWGLContext",1,0.010000%
-"NBString",2,0.020000%
-"GetCurrentProcessId",1,0.010000%
-"fmt::v11::detail::is_constant_evaluated",1,0.010000%
-"fmt::v11::detail::umul128",1,0.010000%
-"fmt::v11::detail::format_handler<char>::on_text",2,0.020000%
-"recalloc_dbg",1,0.010000%
-"GetClassNameW",1,0.010000%
-"std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >",1,0.010000%
-"fmt::v11::detail::write_float<char,fmt::v11::basic_appender<char>,float>",4,0.040000%
-"free_dbg",1,0.010000%
-"fmt::v11::detail::uint128_fallback::low",1,0.010000%
-"RtlFindCharInUnicodeString",1,0.010000%
-"RtlActivateActivationContextUnsafeFast",1,0.010000%
-"DrawThemeBackgroundEx",1,0.010000%
-"CallNextHookEx",1,0.010000%
-"Vector2Length",3,0.030000%
-"fmt::v11::detail::parse_dynamic_spec<char>",1,0.010000%
-"fmt::v11::detail::copy_noinline<char,char const *,fmt::v11::basic_appender<char> >",1,0.010000%
-"glfw_calloc",2,0.020000%
-"Ordinal2712",2,0.020000%
-"fmt::v11::detail::ignore_unused<bool>",1,0.010000%
-"fmt::v11::detail::write_padded<char,2,fmt::v11::basic_appender<char>,`fmt::v11::detail::do_write_float<char,fmt::v11::basic_appender<char>,fmt::v11::detail::big_decimal_fp,fmt::v11::detail::digit_grouping<char> >'::`30'::<lambda_4> &>",2,0.020000%
-"PeekMessageW",1,0.010000%
-"GetPixelFormat",2,0.020000%
-"std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >",1,0.010000%
-"std::_Iterator_base12::_Iterator_base12",1,0.010000%
-"fmt::v11::basic_appender<char>::basic_appender<char>",1,0.010000%
-"RtlQueryPerformanceCounter",2,0.020000%
-"IsKeyPressed",1,0.010000%
-"strlen",1,0.010000%
-"std::_String_val<std::_Simple_types<char> >::_Myptr",1,0.010000%
-"EndDrawing",1,0.010000%
-"std::is_constant_evaluated",2,0.020000%
-"putwch_nolock",2,0.020000%
-"fmt::v11::detail::num_significand_bits<double>",1,0.010000%
-"Boid::boundPosition",1,0.010000%
-"operator delete",1,0.010000%
-"fmt::v11::basic_specs::set_type",1,0.010000%
-"std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::~_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>",1,0.010000%
-"__security_check_cookie",1,0.010000%
-"RtlVirtualUnwind",4,0.040000%
-"fmt::v11::detail::buffer<char>::set",1,0.010000%
-"XHook",1,0.010000%
-"RemoveDllDirectory",1,0.010000%
-"fmt::v11::detail::adjust_precision",1,0.010000%
-"`fmt::v11::detail::parse_format_specs<char>'::`2'::<unnamed-type-parse_presentation_type>::operator()",1,0.010000%
-"std::allocator<char>::allocator<char>",1,0.010000%
-"invalid_parameter",1,0.010000%
-"glClearColor",1,0.010000%
-"DispatchMessageW",1,0.010000%
-"`fmt::v11::detail::parse_format_specs<char>'::`2'::<unnamed-type-enter_state>::operator()",1,0.010000%
-"bsearch",1,0.010000%
-"glfwCenterCursorInContentArea",1,0.010000%
-"RtlReleaseActivationContext",1,0.010000%
-"glfwPlatformGetTimerValue",2,0.020000%
-"ILT+4085(rlBegin)",1,0.010000%
-"GetObjectType",1,0.010000%
-"SwapBuffers",1,0.010000%
-"`fmt::v11::detail::do_write_float<char,fmt::v11::basic_appender<char>,fmt::v11::detail::big_decimal_fp,fmt::v11::detail::digit_grouping<char> >'::`2'::<lambda_1>::<lambda_1>",1,0.010000%
-"ILT+3300(_glfwPlatformGetTimerValue)",1,0.010000%
-"wglSwapLayerBuffers",1,0.010000%
-"std::chrono::duration<__int64,std::ratio<1,1000000000> >::count",1,0.010000%
-"fmt::v11::detail::arg_ref<char>::arg_ref<char>",1,0.010000%
-"RtlDosApplyFileIsolationRedirection_Ustr",1,0.010000%
-"fmt::v11::detail::to_unsigned<int>",1,0.010000%
-"LdrResolveDelayLoadedAPI",1,0.010000%
-"std::_String_val<std::_Simple_types<char> >::_Activate_SSO_buffer",1,0.010000%
-"fmt::v11::detail::is_arithmetic_type",1,0.010000%
-"set_new_handler",1,0.010000%
-"glfwSetWindowTitleWin32",1,0.010000%
-"InitOnceExecuteOnce",1,0.010000%
-"wglCopyContext",1,0.010000%
-"RtlMultiAppendUnicodeStringBuffer",1,0.010000%
-"fmt::v11::detail::bit_cast<unsigned __int64,double,0>",1,0.010000%
-"CrtIsValidHeapPointer",1,0.010000%
-"std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,0>",1,0.010000%
-"RtlFindActivationContextSectionString",1,0.010000%
-"LoadLibraryExW",1,0.010000%
-"fmt::v11::detail::format_handler<char>::on_arg_id",1,0.010000%
+"rprand_unload_sequence",1,0.015931%
+"NtUserMessageCall",88,1.401944%
+"sinf",5,0.079656%
+"Boid::draw",58,0.924008%
+"Vector2Rotate",34,0.541660%
+"NtAlpcSendWaitReceivePort",2,0.031862%
+"ZwWaitForSingleObject",141,2.246296%
+"NtWaitForAlertByThreadId",5612,89.405769%
+"dtest",1,0.015931%
+"NtWriteFile",52,0.828421%
+"atan2f",56,0.892146%
+"NtUserGetKeyState",8,0.127449%
+"fmt::v11::detail::value<fmt::v11::context>::value<fmt::v11::context>",1,0.015931%
+"NtFindAtom",11,0.175243%
+"ZwAlertThreadByThreadId",26,0.414211%
+"DrvPresentBuffers",7,0.111518%
+"RtlWaitOnAddress",4,0.063725%
+"rlVertex2f",4,0.063725%
+"Vector2Angle",7,0.111518%
+"rlVertex3f",45,0.716903%
+"NtUserWindowFromDC",6,0.095587%
+"Vector2Add",25,0.398279%
+"rlSetTexture",3,0.047794%
+"cosf",10,0.159312%
+"wglSwapMultipleBuffers",1,0.015931%
+"PollInputEvents",1,0.015931%
+"DrawTriangle",2,0.031862%
+"_RTC_CheckStackVars",6,0.095587%
+"XHook",2,0.031862%
+"NtUserPeekMessage",5,0.079656%
+"RtlVerifyVersionInfo",1,0.015931%
+"ILT+3185(rlVertex3f)",1,0.015931%
+"std::unique_ptr<Boid,std::default_delete<Boid> >::operator->",1,0.015931%
+"NtSetEvent",2,0.031862%
+"fmt::v11::detail::dragonbox::to_decimal<double>",2,0.031862%
+"NtGdiGetDCDword",1,0.015931%
+"ILT+12955(?Vector2AngleYAMUVector2",1,0.015931%
+"ILT+4055(rlVertex2f)",2,0.031862%
+"RtlLeaveCriticalSection",1,0.015931%
+"ZwQueryLicenseValue",2,0.031862%
+"RtlSetUserValueHeap",1,0.015931%
+"rlTexCoord2f",1,0.015931%
+"RtlGetCurrentServiceSessionId",1,0.015931%
+"RtlWakeAddressAll",1,0.015931%
+"ILT+4850(rlBegin)",1,0.015931%
+"GlobalFindAtomW",1,0.015931%
+"operator delete",1,0.015931%
+"write",1,0.015931%
+"std::_Lockit::_Lockit",1,0.015931%
+"strcpy",1,0.015931%
+"NtUserGetProp",2,0.031862%
+"memmove",1,0.015931%
+"fmt::v11::detail::copy<char,char *,fmt::v11::basic_appender<char>,0>",1,0.015931%
+"fmt::v11::context::arg",1,0.015931%
+"RtlEnterCriticalSection",2,0.031862%
+"NtUserGetThreadState",2,0.031862%
+"NtQueryInformationThread",2,0.031862%
+"NtUserDestroyWindow",11,0.175243%
+"NtUserGetTitleBarInfo",1,0.015931%
+"NtUserQueryWindow",1,0.015931%
+"NtUserKillTimer",2,0.031862%
+"NtUserRemoveProp",1,0.015931%
+"NtUserSetWindowLongPtr",1,0.015931%
+"LoadTypeLibEx",1,0.015931%

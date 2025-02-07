@@ -472,6 +472,15 @@ raylib_LIB_DEPENDS:STATIC=general;opengl32;glu32;winmm;glfw;
 raylib_SOURCE_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/build/_deps/raylib-src/src
 
 //Value Computed by CMake
+threadPool_BINARY_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/build/libraries/threadPool
+
+//Value Computed by CMake
+threadPool_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+threadPool_SOURCE_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/libraries/threadPool
+
+//Value Computed by CMake
 timeManager_BINARY_DIR:STATIC=C:/Users/Kelson/Documents/Projects/boids/build/libraries/timeManager
 
 //Value Computed by CMake
@@ -612,7 +621,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

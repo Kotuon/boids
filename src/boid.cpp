@@ -6,11 +6,13 @@
 #include <fmt/core.h>
 #include "trace.hpp"
 
-Boid::Boid( const Vector2& Position_, float Scale_ )
+Boid::Boid( const Vector2& Position_, const float Scale_ )
     : Position( Position_ ), Scale( Scale_ ) {}
 
-Boid::Boid( const Vector2& Position_, const Vector2& Velocity_, float Scale_ )
-    : Position( Position_ ), Velocity( Velocity_ ), Scale( Scale_ ) {}
+Boid::Boid( const Vector2& Position_, const Vector2& Velocity_,
+            const float Scale_, const float SimScale_ )
+    : Position( Position_ ), Velocity( Velocity_ ), Scale( Scale_ ),
+      SimScale( SimScale_ ) {}
 
 void Boid::update() {}
 
@@ -18,12 +20,15 @@ void Boid::draw() const {
     const float Angle = Vector2Angle( Fwd, Velocity );
 
     DrawTriangle(
-        Vector2Add( Position,
-                    Vector2Rotate( Vector2{ Scale * 2.f, 0.f }, Angle ) ),
-        Vector2Add( Position,
-                    Vector2Rotate( Vector2{ -Scale, -Scale }, Angle ) ),
-        Vector2Add( Position,
-                    Vector2Rotate( Vector2{ -Scale, Scale }, Angle ) ),
+        Vector2Add(
+            Position,
+            Vector2Rotate( Vector2{ SimScale * Scale * 2.f, 0.f }, Angle ) ),
+        Vector2Add( Position, Vector2Rotate( Vector2{ SimScale * -Scale,
+                                                      SimScale * -Scale },
+                                             Angle ) ),
+        Vector2Add( Position, Vector2Rotate( Vector2{ SimScale * -Scale,
+                                                      SimScale * Scale },
+                                             Angle ) ),
         GREEN );
 }
 
@@ -43,8 +48,8 @@ const Vector2 Boid::boundPosition( const Vector2& Bounds ) const {
     return Result;
 }
 
-void Boid::setVelocity( const Vector2 Velocity_ ) { Velocity = Velocity_; }
-void Boid::setPosition( const Vector2 Position_ ) { Position = Position_; }
+void Boid::setVelocity( const Vector2& Velocity_ ) { Velocity = Velocity_; }
+void Boid::setPosition( const Vector2& Position_ ) { Position = Position_; }
 
 const Vector2& Boid::getPosition() const { return Position; }
 
