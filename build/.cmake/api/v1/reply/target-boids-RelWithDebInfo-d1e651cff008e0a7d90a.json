@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Debug/boids.exe"
+			"path" : "RelWithDebInfo/boids.exe"
 		},
 		{
-			"path" : "Debug/boids.pdb"
+			"path" : "RelWithDebInfo/boids.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -69,7 +69,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /W4 /std:c++latest /MDd /Zi /Ob0 /Od /RTC1 -std:c++20"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /W4 /std:c++latest /MD /Zi /O2 /Ob1 /DNDEBUG -std:c++20"
 				},
 				{
 					"backtrace" : 2,
@@ -165,11 +165,7 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "traceSystem::@281bfe23601ef6e9681b"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "fmt::@02464759dd67601a9918"
+			"id" : "profiler::@00fbca128c70846aff05"
 		},
 		{
 			"backtrace" : 2,
@@ -177,15 +173,19 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "profiler::@00fbca128c70846aff05"
+			"id" : "fmt::@02464759dd67601a9918"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "threadPool::@c72df87bf75169007c83"
+			"id" : "traceSystem::@281bfe23601ef6e9681b"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "timeManager::@88d159df7f4a1061ad26"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "threadPool::@c72df87bf75169007c83"
 		},
 		{
 			"backtrace" : 2,
@@ -205,7 +205,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /W4 /std:c++latest /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /W4 /std:c++latest /MD /Zi /O2 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -214,37 +214,37 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "_deps\\raylib-build\\raylib\\Debug\\raylib.lib",
+				"fragment" : "_deps\\raylib-build\\raylib\\RelWithDebInfo\\raylib.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "libraries\\fmt\\Debug\\fmtd.lib",
+				"fragment" : "libraries\\fmt\\RelWithDebInfo\\fmt.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "libraries\\traceSystem\\Debug\\traceSystem.lib",
+				"fragment" : "libraries\\traceSystem\\RelWithDebInfo\\traceSystem.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "libraries\\crashHandler\\Debug\\crashHandler.lib",
+				"fragment" : "libraries\\crashHandler\\RelWithDebInfo\\crashHandler.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "libraries\\profiler\\Debug\\profiler.lib",
+				"fragment" : "libraries\\profiler\\RelWithDebInfo\\profiler.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "libraries\\timeManager\\Debug\\timeManager.lib",
+				"fragment" : "libraries\\timeManager\\RelWithDebInfo\\timeManager.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "libraries\\threadPool\\Debug\\threadPool.lib",
+				"fragment" : "libraries\\threadPool\\RelWithDebInfo\\threadPool.lib",
 				"role" : "libraries"
 			},
 			{
@@ -264,7 +264,7 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "_deps\\raylib-build\\raylib\\external\\glfw\\src\\Debug\\glfw3.lib",
+				"fragment" : "_deps\\raylib-build\\raylib\\external\\glfw\\src\\RelWithDebInfo\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{

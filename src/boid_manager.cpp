@@ -52,7 +52,7 @@ void BoidManager::updateThread() {
     UStatus = S_Position;
     Stp->runTask();
 
-    // buildTree();
+    buildTree();
 }
 
 void BoidManager::updateThreadWorker( const size_t ThreadId ) {

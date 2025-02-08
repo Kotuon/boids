@@ -1,65 +1,293 @@
 Function, Hit Count, Percentage
-"rprand_unload_sequence",1,0.015931%
-"NtUserMessageCall",88,1.401944%
-"sinf",5,0.079656%
-"Boid::draw",58,0.924008%
-"Vector2Rotate",34,0.541660%
-"NtAlpcSendWaitReceivePort",2,0.031862%
-"ZwWaitForSingleObject",141,2.246296%
-"NtWaitForAlertByThreadId",5612,89.405769%
-"dtest",1,0.015931%
-"NtWriteFile",52,0.828421%
-"atan2f",56,0.892146%
-"NtUserGetKeyState",8,0.127449%
-"fmt::v11::detail::value<fmt::v11::context>::value<fmt::v11::context>",1,0.015931%
-"NtFindAtom",11,0.175243%
-"ZwAlertThreadByThreadId",26,0.414211%
-"DrvPresentBuffers",7,0.111518%
-"RtlWaitOnAddress",4,0.063725%
-"rlVertex2f",4,0.063725%
-"Vector2Angle",7,0.111518%
-"rlVertex3f",45,0.716903%
-"NtUserWindowFromDC",6,0.095587%
-"Vector2Add",25,0.398279%
-"rlSetTexture",3,0.047794%
-"cosf",10,0.159312%
-"wglSwapMultipleBuffers",1,0.015931%
-"PollInputEvents",1,0.015931%
-"DrawTriangle",2,0.031862%
-"_RTC_CheckStackVars",6,0.095587%
-"XHook",2,0.031862%
-"NtUserPeekMessage",5,0.079656%
-"RtlVerifyVersionInfo",1,0.015931%
-"ILT+3185(rlVertex3f)",1,0.015931%
-"std::unique_ptr<Boid,std::default_delete<Boid> >::operator->",1,0.015931%
-"NtSetEvent",2,0.031862%
-"fmt::v11::detail::dragonbox::to_decimal<double>",2,0.031862%
-"NtGdiGetDCDword",1,0.015931%
-"ILT+12955(?Vector2AngleYAMUVector2",1,0.015931%
-"ILT+4055(rlVertex2f)",2,0.031862%
-"RtlLeaveCriticalSection",1,0.015931%
-"ZwQueryLicenseValue",2,0.031862%
-"RtlSetUserValueHeap",1,0.015931%
-"rlTexCoord2f",1,0.015931%
-"RtlGetCurrentServiceSessionId",1,0.015931%
-"RtlWakeAddressAll",1,0.015931%
-"ILT+4850(rlBegin)",1,0.015931%
-"GlobalFindAtomW",1,0.015931%
-"operator delete",1,0.015931%
-"write",1,0.015931%
-"std::_Lockit::_Lockit",1,0.015931%
-"strcpy",1,0.015931%
-"NtUserGetProp",2,0.031862%
-"memmove",1,0.015931%
-"fmt::v11::detail::copy<char,char *,fmt::v11::basic_appender<char>,0>",1,0.015931%
-"fmt::v11::context::arg",1,0.015931%
-"RtlEnterCriticalSection",2,0.031862%
-"NtUserGetThreadState",2,0.031862%
-"NtQueryInformationThread",2,0.031862%
-"NtUserDestroyWindow",11,0.175243%
-"NtUserGetTitleBarInfo",1,0.015931%
-"NtUserQueryWindow",1,0.015931%
-"NtUserKillTimer",2,0.031862%
-"NtUserRemoveProp",1,0.015931%
-"NtUserSetWindowLongPtr",1,0.015931%
-"LoadTypeLibEx",1,0.015931%
+"RtlInitUnicodeStringEx",1,0.009291%
+"fmt::v11::detail::parse_format_string<char,fmt::v11::detail::format_handler<char> >",2,0.018582%
+"NtUserPeekMessage",450,4.180991%
+"NtFindAtom",1067,9.913592%
+"NtUserGetProp",413,3.837220%
+"ZwWaitForSingleObject",112,1.040602%
+"std::to_address<unsigned int>",1,0.009291%
+"ZwAlertThreadByThreadId",17,0.157949%
+"DrawRectanglePro",434,4.032333%
+"NtUserWindowFromDC",1420,13.193348%
+"main",66,0.613212%
+"NtUserMessageCall",4305,39.998142%
+"NtUserGetKeyState",485,4.506178%
+"rlVertex3f",513,4.766329%
+"RtlFindActivationContextSectionGuid",5,0.046455%
+"DrawRectangleRec",85,0.789743%
+"NtUserGetThreadState",133,1.235715%
+"calloc_base",12,0.111493%
+"std::_Deque_unchecked_const_iterator<std::_Deque_val<std::_Deque_simple_types<std::unique_ptr<Quad,std::default_delete<Quad> > > > >::operator*",1,0.009291%
+"rlTexCoord2f",56,0.520301%
+"Vector2Rotate",32,0.297315%
+"Vector2SubtractValue",17,0.157949%
+"DrvPresentBuffers",68,0.631794%
+"NtWaitForAlertByThreadId",48,0.445972%
+"RtlVirtualUnwind",5,0.046455%
+"_RTC_CheckStackVars",86,0.799034%
+"std::is_constant_evaluated",2,0.018582%
+"rlSetTexture",21,0.195113%
+"Boid::draw",35,0.325188%
+"atan2f",65,0.603921%
+"glfwPollEvents",1,0.009291%
+"LoadLibraryExW",1,0.009291%
+"DrawRectangleLinesEx",51,0.473846%
+"RtlAnsiStringToUnicodeString",4,0.037164%
+"glfwSetWindowTitle",1,0.009291%
+"std::unique_ptr<Quad,std::default_delete<Quad> >::operator->",10,0.092911%
+"rlNormal3f",92,0.854780%
+"fmt::v11::detail::parse_replacement_field<char,fmt::v11::detail::format_handler<char> &>",1,0.009291%
+"RtlEnterCriticalSection",7,0.065038%
+"std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Get_first",3,0.027873%
+"rlVertex2f",30,0.278733%
+"RtlInitAnsiStringEx",2,0.018582%
+"sqrtf",14,0.130075%
+"GetObjectType",1,0.009291%
+"ZwQueryLicenseValue",30,0.278733%
+"ILT+4055(rlVertex2f)",10,0.092911%
+"glfwSetWindowTitleWin32",2,0.018582%
+"Vector2Add",18,0.167240%
+"cosf",8,0.074329%
+"GetLastError",1,0.009291%
+"fmt::v11::basic_specs::set_fill",1,0.009291%
+"fmt::v11::detail::dragonbox::cache_accessor<double>::get_cached_power",1,0.009291%
+"std::vector<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Orphan_range_locked",1,0.009291%
+"NtSetEvent",19,0.176531%
+"NtGdiGetDCDword",22,0.204404%
+"RtlInitUnicodeString",3,0.027873%
+"RtlLeaveCriticalSection",16,0.148657%
+"GetProcessMitigationPolicy",2,0.018582%
+"ZwQueryInformationProcess",6,0.055747%
+"fmt::v11::detail::vformat_to",3,0.027873%
+"RtlRunOnceExecuteOnce",2,0.018582%
+"rlDrawRenderBatch",8,0.074329%
+"Quadtree::clear",1,0.009291%
+"glfwSwapBuffers",1,0.009291%
+"RtlGetCurrentServiceSessionId",7,0.065038%
+"fmt::v11::detail::max_value<int>",1,0.009291%
+"fmt::v11::basic_memory_buffer<char,500,fmt::v11::detail::allocator<char> >::deallocate",1,0.009291%
+"free_dbg",1,0.009291%
+"RtlActivateActivationContextUnsafeFast",2,0.018582%
+"memset",13,0.120784%
+"RtlSetUserValueHeap",1,0.009291%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >",2,0.018582%
+"wglSwapMultipleBuffers",1,0.009291%
+"ILT+11845(rlColor4ub)",4,0.037164%
+"LdrFindEntryForAddress",6,0.055747%
+"ILT+15105(rlTexCoord2f)",1,0.009291%
+"glfwCreateWideStringFromUTF8Win32",1,0.009291%
+"rlEnd",4,0.037164%
+"RtlWaitOnAddress",2,0.018582%
+"fmt::v11::basic_format_args<fmt::v11::context>::basic_format_args<fmt::v11::context><1,0,9,0>",2,0.018582%
+"MultiByteToWideChar",1,0.009291%
+"std::_Iterator_base12::_Orphan_me_locked_v3",1,0.009291%
+"Quad::subdivide",1,0.009291%
+"RtlDosApplyFileIsolationRedirection_Ustr",3,0.027873%
+"NtCallbackReturn",5,0.046455%
+"PeekMessageW",1,0.009291%
+"std::_String_const_iterator<std::_String_val<std::_Simple_types<char> > >::~_String_const_iterator<std::_String_val<std::_Simple_types<char> > >",1,0.009291%
+"set_new_handler",1,0.009291%
+"GetClassNameA",2,0.018582%
+"ILT+11820(_RTC_CheckStackVars)",1,0.009291%
+"XHook",5,0.046455%
+"glClear",2,0.018582%
+"GetPropW",2,0.018582%
+"sinf",12,0.111493%
+"rlBegin",10,0.092911%
+"RtlAcquireSRWLockShared",1,0.009291%
+"glfw_calloc",3,0.027873%
+"std::_Iterator_base12::~_Iterator_base12",1,0.009291%
+"std::_Get_size_of_n<16>",1,0.009291%
+"std::_String_val<std::_Simple_types<char> >::_Myptr",1,0.009291%
+"std::unique_ptr<Quad,std::default_delete<Quad> >::release",2,0.018582%
+"LdrGetProcedureAddressForCaller",5,0.046455%
+"glfw_strdup",1,0.009291%
+"fmt::v11::detail::write_float<char,fmt::v11::basic_appender<char>,fmt::v11::detail::big_decimal_fp>",2,0.018582%
+"RtlGetVersion",1,0.009291%
+"RtlEqualUnicodeString",3,0.027873%
+"DrawTriangle",4,0.037164%
+"LdrResolveDelayLoadedAPI",2,0.018582%
+"Vector2Angle",5,0.046455%
+"RtlDeleteBoundaryDescriptor",1,0.009291%
+"fmt::v11::detail::write<char,fmt::v11::basic_appender<char>,float,0>",2,0.018582%
+"std::unique_ptr<Quad,std::default_delete<Quad> >::unique_ptr<Quad,std::default_delete<Quad> ><std::default_delete<Quad>,0>",2,0.018582%
+"memcpy",4,0.037164%
+"std::numeric_limits<int>::max",1,0.009291%
+"fmt::v11::detail::digit_grouping<char>::initial_state",1,0.009291%
+"operator new",1,0.009291%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Mysize",1,0.009291%
+"RtlDosPathNameToRelativeNtPathName_U_WithStatus",1,0.009291%
+"LdrUnloadDll",2,0.018582%
+"glPushClientAttrib",3,0.027873%
+"RtlStronglyEnumerateEntryHashTable",2,0.018582%
+"std::_Deque_unchecked_const_iterator<std::_Deque_val<std::_Deque_simple_types<std::unique_ptr<Quad,std::default_delete<Quad> > > > >::_Deque_unchecked_const_iterator<std::_Deque_val<std::_Deque_simple_types<std::unique_ptr<Quad,std::default_delete<Quad> > > > >",1,0.009291%
+"std::_Destroy_in_place<char *>",1,0.009291%
+"fmt::v11::detail::dynamic_format_specs<char>::dynamic_format_specs<char>",2,0.018582%
+"fmt::v11::parse_context<char>::next_arg_id",1,0.009291%
+"GetUserColorPreference",1,0.009291%
+"RtlReleaseSRWLockExclusive",1,0.009291%
+"ILT+7565(?drawBoidQEBAXXZ)",1,0.009291%
+"std::array<std::unique_ptr<Boid,std::default_delete<Boid> >,100>::_Unchecked_end",1,0.009291%
+"dsign",1,0.009291%
+"fmt::v11::detail::fractional_part_rounding_thresholds",1,0.009291%
+"std::_Unfancy<char>",1,0.009291%
+"strlen",2,0.018582%
+"fmt::v11::detail::write_float<char,fmt::v11::basic_appender<char>,float>",3,0.027873%
+"IntersectRect",1,0.009291%
+"fmt::v11::detail::is_constant_evaluated",1,0.009291%
+"RtlQueryPerformanceCounter",5,0.046455%
+"fmt::v11::basic_specs::localized",1,0.009291%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Get_data",1,0.009291%
+"rlColor4ub",5,0.046455%
+"MatrixToFloatV",1,0.009291%
+"fmt::v11::monostate::monostate",1,0.009291%
+"ILT+15205(rlEnd)",1,0.009291%
+"IsWindowRedirectedForPrint",1,0.009291%
+"std::_Lockit::~_Lockit",1,0.009291%
+"RtlReleaseActivationContext",2,0.018582%
+"fmt::v11::detail::parse_format_specs<char>",4,0.037164%
+"std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>",2,0.018582%
+"RtlFreeHeap",2,0.018582%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Orphan_all",1,0.009291%
+"fmt::v11::detail::write_significand<fmt::v11::basic_appender<char>,char>",1,0.009291%
+"fmt::v11::detail::exponent_bias<double>",1,0.009291%
+"GetTime",1,0.009291%
+"vk_gr2608GetInstanceProcAddr",2,0.018582%
+"GlobalFindAtomW",1,0.009291%
+"std::_Compressed_pair<std::default_delete<Quad>,Quad *,1>::_Compressed_pair<std::default_delete<Quad>,Quad *,1><std::default_delete<Quad>,Quad *>",3,0.027873%
+"RtlRetrieveNtUserPfn",1,0.009291%
+"std::_Container_base12::_Orphan_all",1,0.009291%
+"wglSwapLayerBuffers",3,0.027873%
+"std::_Allocate<16,std::_Default_allocate_traits,0>",1,0.009291%
+"CallWindowProcW",1,0.009291%
+"fmt::v11::detail::buffer<char>::append<char>",1,0.009291%
+"InitOnceExecuteOnce",4,0.037164%
+"RtlAllocateHeap",6,0.055747%
+"recalloc",1,0.009291%
+"IsCompositionActive",2,0.018582%
+"RtlGetFullPathName_UstrEx",2,0.018582%
+"RtlWakeAddressAll",2,0.018582%
+"RtlReleaseRelativeName",4,0.037164%
+"fmt::v11::detail::num_significand_bits<double>",1,0.009291%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Mapsize",1,0.009291%
+"FlsGetValue",1,0.009291%
+"fmt::v11::basic_format_arg<fmt::v11::context>::visit<fmt::v11::detail::arg_formatter<char> >",1,0.009291%
+"gladLoadGL",6,0.055747%
+"recalloc_dbg",1,0.009291%
+"ILT+4850(rlBegin)",2,0.018582%
+"operator delete",1,0.009291%
+"glfwPlatformGetTimerValue",4,0.037164%
+"RtlValidateHeap",2,0.018582%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Orphan_off",1,0.009291%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct<1,char const *>",1,0.009291%
+"fmt::v11::detail::buffer<char>::size",1,0.009291%
+"std::_Destroy_range<std::allocator<unsigned int> >",1,0.009291%
+"fmt::v11::parse_context<char>::parse_context<char>",1,0.009291%
+"KiUserCallbackDispatcher",5,0.046455%
+"RtlAcquireSRWLockExclusive",4,0.037164%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Getal",2,0.018582%
+"std::max<unsigned __int64>",1,0.009291%
+"SwapBuffers",2,0.018582%
+"`fmt::v11::detail::parse_format_specs<char>'::`2'::<unnamed-type-enter_state>::operator()",2,0.018582%
+"fmt::v11::detail::uint128_fallback::low",1,0.009291%
+"std::_Iterator_base12::_Iterator_base12",1,0.009291%
+"std::_Lockit::_Lockit",6,0.055747%
+"IsWindow",1,0.009291%
+"std::min<float>",2,0.018582%
+"TimeManager::needsFixedUpdate",1,0.009291%
+"std::vector<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::operator[]",4,0.037164%
+"fmt::v11::context::context",1,0.009291%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Emplace_back_internal<std::unique_ptr<Quad,std::default_delete<Quad> > >",2,0.018582%
+"Cnd_unregister_at_thread_exit",1,0.009291%
+"std::vector<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Unchecked_begin",1,0.009291%
+"fmt::v11::basic_format_args<fmt::v11::context>::get",1,0.009291%
+"FreeLibrary",1,0.009291%
+"std::unique_ptr<Boid,std::default_delete<Boid> >::operator->",1,0.009291%
+"RtlFindCharInUnicodeString",1,0.009291%
+"wglCopyContext",3,0.027873%
+"fmt::v11::detail::reserve<char>",1,0.009291%
+"fmt::v11::detail::format_float<double>",4,0.037164%
+"std::_String_val<std::_Simple_types<char> >::_Large_string_engaged",1,0.009291%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >",2,0.018582%
+"fmt::v11::basic_format_arg<fmt::v11::context>::format_custom",1,0.009291%
+"std::chrono::duration<__int64,std::ratio<1,1000000000> >::count",1,0.009291%
+"LoadLibraryExA",1,0.009291%
+"std::_Container_base12::_Orphan_all_unlocked_v3",1,0.009291%
+"BoidManager::draw",2,0.018582%
+"std::_Get_size_of_n<1>",1,0.009291%
+"std::_Basic_container_proxy_ptr12::_Basic_container_proxy_ptr12",1,0.009291%
+"LdrLoadDll",1,0.009291%
+"BoidManager::buildTree",1,0.009291%
+"Ordinal2712",1,0.009291%
+"DllMain",1,0.009291%
+"RtlSetLastWin32Error",1,0.009291%
+"fmt::v11::detail::arg_formatter<char>::operator()<float,0>",1,0.009291%
+"WaitOnAddress",1,0.009291%
+"MemoryBank::get",1,0.009291%
+"std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::~_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>",1,0.009291%
+"DrvSwapLayerBuffers",2,0.018582%
+"fmt::v11::detail::buffer<char>::push_back",1,0.009291%
+"std::vector<unsigned int,std::allocator<unsigned int> >::_Emplace_back_with_unused_capacity<unsigned int const &>",1,0.009291%
+"RtlUTF8ToUnicodeN",3,0.027873%
+"PollInputEvents",4,0.037164%
+"std::exchange<std::_Iterator_base12 *,std::nullptr_t>",1,0.009291%
+"fmt::v11::vformat",1,0.009291%
+"RtlInitAnsiString",1,0.009291%
+"fmt::v11::detail::uint128_fallback::high",1,0.009291%
+"GetWindowTextW",1,0.009291%
+"fmt::v11::basic_string_view<char>::data",1,0.009291%
+"glfwGetWGLContext",2,0.018582%
+"BeginDrawing",1,0.009291%
+"std::_Container_base12::_Orphan_all_locked_v3",2,0.018582%
+"fmt::v11::detail::do_write_float<char,fmt::v11::basic_appender<char>,fmt::v11::detail::big_decimal_fp,fmt::v11::detail::digit_grouping<char> >",1,0.009291%
+"GetParent",2,0.018582%
+"std::exchange<Quad *,std::nullptr_t>",3,0.027873%
+"glfwGetTime",2,0.018582%
+"std::allocator<std::_Container_proxy>::allocate",1,0.009291%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::empty",1,0.009291%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::max_size",2,0.018582%
+"std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >",1,0.009291%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::empty",3,0.027873%
+"GlobalFree",1,0.009291%
+"std::_Construct_in_place<char *,char * const &>",1,0.009291%
+"SetWindowsHookExAW",1,0.009291%
+"RtlInterlockedPushListSList",1,0.009291%
+"ILT+235(??$minMstdYAAEBMAEBM0Z)",1,0.009291%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy_init",1,0.009291%
+"std::destroy_at<std::unique_ptr<Quad,std::default_delete<Quad> > >",1,0.009291%
+"RtlFlsGetValue",2,0.018582%
+"`fmt::v11::detail::format_float<double>'::`46'::<lambda_1>::operator()",2,0.018582%
+"NBString",1,0.009291%
+"`fmt::v11::detail::do_write_float<char,fmt::v11::basic_appender<char>,fmt::v11::detail::big_decimal_fp,fmt::v11::detail::digit_grouping<char> >'::`2'::<lambda_1>::<lambda_1>",1,0.009291%
+"GetProcAddress",1,0.009291%
+"fmt::v11::detail::copy<char,char const *,fmt::v11::basic_appender<char>,0>",1,0.009291%
+"WindowShouldClose",1,0.009291%
+"ILT+3185(rlVertex3f)",1,0.009291%
+"fmt::v11::detail::arg_ref<char>::arg_ref<char>",1,0.009291%
+"std::_Iterator_base12::_Orphan_me_unlocked_v3",1,0.009291%
+"DispatchMessageW",1,0.009291%
+"putwch_nolock",1,0.009291%
+"fmt::v11::detail::buffer<char>::buffer<char>",1,0.009291%
+"fmt::v11::detail::bit_cast<unsigned __int64,double,0>",1,0.009291%
+"std::_Iterator_base12::_Adopt_locked",1,0.009291%
+"CallNextHookEx",1,0.009291%
+"fmt::v11::detail::copy_noinline<char,char const *,fmt::v11::basic_appender<char> >",1,0.009291%
+"fmt::v11::basic_specs::set_alt",1,0.009291%
+"std::deque<std::unique_ptr<Quad,std::default_delete<Quad> >,std::allocator<std::unique_ptr<Quad,std::default_delete<Quad> > > >::_Myoff",2,0.018582%
+"NtUserSetCursor",6,0.055747%
+"NtUserFindExistingCursorIcon",2,0.018582%
+"NtUserIsChildWindowDpiMessageEnabled",2,0.018582%
+"NtUserIsTopLevelWindow",1,0.009291%
+"NtUserIsNonClientDpiScalingEnabled",2,0.018582%
+"fmt::v11::detail::digit_grouping<char>::~digit_grouping<char>",1,0.009291%
+"GetCurrentThreadId",1,0.009291%
+"GetWindowLongPtrW",1,0.009291%
+"fmt::v11::detail::to_ascii<char,0>",1,0.009291%
+"std::unique_ptr<Boid,std::default_delete<Boid> >::get",1,0.009291%
+"DrvValidateVersion",1,0.009291%
+"NtQueryInformationThread",3,0.027873%
+"NtUserDestroyWindow",8,0.074329%
+"NtUserGetTitleBarInfo",1,0.009291%
+"NtAlpcSendWaitReceivePort",2,0.018582%
+"NtUserKillTimer",2,0.018582%
+"NtWriteFile",2,0.018582%
