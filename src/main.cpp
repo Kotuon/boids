@@ -42,7 +42,8 @@ int main( int, char** ) {
         while ( Time.needsFixedUpdate() ) {
             // Fixed update here
 
-            BoidManagerInstance.updateThread();
+            // BoidManagerInstance.updateThread();
+            BoidManagerInstance.updateTree();
         }
 
         // Frame update here
