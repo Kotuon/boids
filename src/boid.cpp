@@ -19,6 +19,11 @@ void Boid::update() {}
 void Boid::draw() const {
     const float Angle = Vector2Angle( Fwd, Velocity );
 
+    DrawRectangleLines( static_cast< int >( Position.x - ( 50.f * SimScale ) ),
+                        static_cast< int >( Position.y - ( 50.f * SimScale ) ),
+                        static_cast< int >( 100.f * SimScale ),
+                        static_cast< int >( 100.f * SimScale ), BLUE );
+
     DrawTriangle(
         Vector2Add(
             Position,

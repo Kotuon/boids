@@ -21,10 +21,10 @@ unsigned Quad::findQuad( const Vector2& Pos ) {
 }
 
 bool Quad::intersects( const Vector2& Pos, const float HalfSize_ ) const {
-    bool NotIntersects = ( Pos.x - HalfSize_ > Pos.x + HalfSize ) ||
-                         ( Pos.x + HalfSize_ < Pos.x - HalfSize ) ||
-                         ( Pos.y - HalfSize_ > Pos.y + HalfSize ) ||
-                         ( Pos.y + HalfSize_ < Pos.y - HalfSize );
+    bool NotIntersects = ( Pos.x - HalfSize_ > Center.x + HalfSize ) ||
+                         ( Pos.x + HalfSize_ < Center.x - HalfSize ) ||
+                         ( Pos.y - HalfSize_ > Center.y + HalfSize ) ||
+                         ( Pos.y + HalfSize_ < Center.y - HalfSize );
 
     return !NotIntersects;
 }
@@ -107,8 +107,6 @@ void Quadtree::insert( Boid* ThisBody ) {
 
     // Else if Quadrant is not empty
 
-    // const Vector2& Pos = Nodes[NodeId]->Body;
-    // const float Mass = Nodes[NodeId]->Mass;
     Boid* OtherBody = Nodes[NodeId]->Body;
     const int Id = Nodes[NodeId]->BodyId;
 
@@ -118,7 +116,10 @@ void Quadtree::insert( Boid* ThisBody ) {
         return;
     }
 
-    // Break current Quadrant into four smaller quadrantsw
+    Nodes[NodeId]->Body = nullptr;
+    Nodes[NodeId]->BodyId = -1;
+
+    // Break current Quadrant into four smaller quadrants
     while ( true ) {
         unsigned ChildrenId = subdivide( NodeId );
 

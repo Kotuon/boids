@@ -21,12 +21,18 @@ BoidManager::BoidManager( const Vector2 Bounds_ ) : Bounds( Bounds_ ) {
 
     Stp->initialize( &BoidManager::updateThreadWorker, this );
 
+    // Vector2 Positions[2] = { Vector2( 10.f, 10.f ),
+    //                          Vector2( Bounds.x - 10.f, Bounds.y - 10.f ) };
+
     for ( size_t i = 0; i < MAX; ++i ) {
         const Vector2 Pos( static_cast< float >( GetRandomValue(
                                0, static_cast< int >( Bounds.x ) ) ),
                            static_cast< float >( GetRandomValue(
                                0, static_cast< int >( Bounds.y ) ) ) );
 
+        // const Vector2 Pos = Positions[i];
+
+        // const Vector2 Vel( 0.f );
         const Vector2 Vel( static_cast< float >( GetRandomValue( -5, 5 ) ),
                            static_cast< float >( GetRandomValue( -5, 5 ) ) );
 
@@ -57,13 +63,17 @@ void BoidManager::updateTree() {
     buildTree();
 
     for ( size_t i = 0; i < MAX; ++i ) {
-        auto& ThisBoid = BoidList[i];
+        auto* ThisBoid = BoidList[i].get();
 
         auto Targets =
             QInstance->query( ThisBoid->getPosition(), LocalSize / 2.f );
 
         BoidsUpdateValues Values;
+        // Trace::message( fmt::format( "Boid#{} Targets:", ThisBoid->getId() ) );
         for ( auto* OtherBoid : Targets ) {
+            if ( OtherBoid == ThisBoid ) continue;
+            // Trace::message( fmt::format( "\t\tBoid#{}", OtherBoid->getId() ) );
+
             Values.Count += 1;
             Values.AvgVelocity =
                 Vector2Add( Values.AvgVelocity, OtherBoid->getVelocity() );
@@ -72,6 +82,9 @@ void BoidManager::updateTree() {
 
             const float Distance = Vector2Distance( ThisBoid->getPosition(),
                                                     OtherBoid->getPosition() );
+
+            // Trace::message( fmt::format( "\t\tBoid#{}: Distance: {}",
+                                        //  OtherBoid->getId(), Distance ) );
 
             if ( Distance < ( LocalSize * 0.4f ) ) {
                 Values.AvgAvoid = Vector2Subtract(
@@ -83,21 +96,21 @@ void BoidManager::updateTree() {
             }
         }
 
-        // BoidsUpdateValues Values =
-        //     QInstance->calculateVelocity( BoidList, Boid1, LocalSize );
+        if ( Values.Count > 0 ) {
+            Values.AvgVelocity = Vector2Scale( Values.AvgVelocity,
+                                               1.f / ( Values.Count * 8.f ) );
 
-        Values.AvgVelocity =
-            Vector2Scale( Values.AvgVelocity, 1.f / ( Values.Count * 8.f ) );
+            Values.AvgPosition =
+                Vector2Scale( Values.AvgPosition, 1.f / Values.Count );
+            Values.AvgPosition =
+                Vector2Subtract( Values.AvgPosition, ThisBoid->getPosition() );
+            Values.AvgPosition =
+                Vector2Scale( Values.AvgPosition, 1.f / 100.f );
 
-        Values.AvgPosition =
-            Vector2Scale( Values.AvgPosition, 1.f / Values.Count );
-        Values.AvgPosition =
-            Vector2Subtract( Values.AvgPosition, ThisBoid->getPosition() );
-        Values.AvgPosition = Vector2Scale( Values.AvgPosition, 1.f / 100.f );
-
-        Values.AvgVelocity = Vector2Scale( Values.AvgVelocity, SimScale );
-        Values.AvgPosition = Vector2Scale( Values.AvgPosition, SimScale );
-        Values.AvgAvoid = Vector2Scale( Values.AvgAvoid, SimScale );
+            Values.AvgVelocity = Vector2Scale( Values.AvgVelocity, SimScale );
+            Values.AvgPosition = Vector2Scale( Values.AvgPosition, SimScale );
+            Values.AvgAvoid = Vector2Scale( Values.AvgAvoid, SimScale );
+        }
 
         ThisBoid->setVelocity( Vector2Add(
             ThisBoid->getVelocity(),

@@ -18,6 +18,8 @@ constexpr int HEIGHT = 720;
 
 #include "timer.hpp"
 
+#include "editor.hpp"
+
 int main( int, char** ) {
     setupDump();
 
@@ -66,6 +68,9 @@ int main( int, char** ) {
 
         EndDrawing();
     }
+
+    // Shutdown
+
     CloseWindow();
 
     return 0;

@@ -58,7 +58,7 @@ struct Quad {
     unsigned Children = 0;
     unsigned Next = 0;
 
-    Vector2 Center;
+    Vector2 Center = { 0.f };
 
     Boid* Body = nullptr;
 
@@ -102,8 +102,8 @@ public:
         while ( true ) {
             const auto& Node = Nodes[NodeId];
 
-            const float DistanceSqr = Vector2DistanceSqr(
-                ThisBody->getPosition(), Node->Center );
+            const float DistanceSqr =
+                Vector2DistanceSqr( ThisBody->getPosition(), Node->Center );
 
             if ( !Node->hasChildren() ||
                  ( Node->Size * Node->Size ) < DistanceSqr * SquareTheta ) {

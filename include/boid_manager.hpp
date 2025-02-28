@@ -39,9 +39,9 @@ private:
     float LocalSize = 100.f;
     float SpeedLimit = 7.f;
 
-    float SimScale = 1.f;
+    float SimScale = 0.25f;
 
-    static const size_t MAX = 100;
+    static const size_t MAX = 5000;
     std::array< BoidPtr, MAX > BoidList;
 
     std::unique_ptr< StaticThreadPool > Stp;
