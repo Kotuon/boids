@@ -45,6 +45,7 @@ file(GLOB_RECURSE PROJECT_SOURCES
     src/*.cxx
     src/*.cc
     src/*.c
+    libraries/imgui/*.cpp
 )
 
 # file(GLOB PROJECT_HEADERS CONFIGURE_DEPENDS libraries/thread_pool/include/*.h)
@@ -60,6 +61,7 @@ include_directories(include/
     SYSTEM libraries/profiler/include
     SYSTEM libraries/timeManager/include
     SYSTEM libraries/threadPool/include
+    SYSTEM libraries/imgui
 )
 
 # Link raylib to main

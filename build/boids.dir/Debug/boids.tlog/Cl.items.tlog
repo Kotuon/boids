@@ -1,5 +1,13 @@
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui.obj
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_demo.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui_demo.obj
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_draw.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui_draw.obj
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_impl_opengl3.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui_impl_opengl3.obj
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_impl_win32.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui_impl_win32.obj
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_tables.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui_tables.obj
+C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_widgets.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\imgui_widgets.obj
 C:\Users\Kelson\Documents\Projects\boids\src\boid.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\boid.obj
 C:\Users\Kelson\Documents\Projects\boids\src\boid_manager.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\boid_manager.obj
+C:\Users\Kelson\Documents\Projects\boids\src\editor.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\editor.obj
 C:\Users\Kelson\Documents\Projects\boids\src\main.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\main.obj
 C:\Users\Kelson\Documents\Projects\boids\src\memory_bank.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\memory_bank.obj
 C:\Users\Kelson\Documents\Projects\boids\src\quadtree.cpp;C:\Users\Kelson\Documents\Projects\boids\build\boids.dir\Debug\quadtree.obj
