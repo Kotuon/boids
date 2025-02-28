@@ -40,7 +40,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/Kelson/Documents/Projects/boids/build/libraries/profiler/cmake_install.cmake")
   include("C:/Users/Kelson/Documents/Projects/boids/build/libraries/timeManager/cmake_install.cmake")
   include("C:/Users/Kelson/Documents/Projects/boids/build/libraries/threadPool/cmake_install.cmake")
-  include("C:/Users/Kelson/Documents/Projects/boids/build/_deps/raylib-build/cmake_install.cmake")
+  include("C:/Users/Kelson/Documents/Projects/boids/build/libraries/glfw/cmake_install.cmake")
 
 endif()
 

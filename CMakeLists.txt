@@ -14,43 +14,40 @@ else()
     endif()
 endif()
 
+#
+# GLFW options
+#
+option(GLFW_INSTALL OFF)
+option(GLFW_BUILD_DOCS OFF)
+option(GLFW_BUILD_EXAMPLES OFF)
+option(GLFW_BUILD_TESTS OFF)
+
+#
+# Libraries with CMake
+#
 add_subdirectory(libraries/fmt)
 add_subdirectory(libraries/traceSystem)
 add_subdirectory(libraries/crashHandler)
 add_subdirectory(libraries/profiler)
 add_subdirectory(libraries/timeManager)
 add_subdirectory(libraries/threadPool)
+add_subdirectory(libraries/glfw)
 
-
-# Try to find a locally installed raylib, but don't quit on fail
-find_package(raylib 5.0 QUIET)
-
-# This code downloads raylib into a directory called _deps and adds it as a subdirectory, compiling it with the program when running the build command
-include(FetchContent)
-
-if(NOT raylib_FOUND)
-    FetchContent_Declare(
-        raylib
-        URL https://github.com/raysan5/raylib/archive/refs/tags/5.0.tar.gz
-        DOWNLOAD_EXTRACT_TIMESTAMP True # This option is not required but suppresses a warning
-    )
-    FetchContent_MakeAvailable(raylib)
-endif()
-
-# We don't want raylib's examples built. This option is picked up by raylib's CMakeLists.txt
-set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-
+#
+# Source files
+#
+file(GLOB_RECURSE LIBRARY_SOURCES
+    libraries/glad/src/glad.c
+    libraries/imgui/*.cpp
+)
 file(GLOB_RECURSE PROJECT_SOURCES
     src/*.cpp
     src/*.cxx
     src/*.cc
     src/*.c
-    libraries/imgui/*.cpp
 )
 
-# file(GLOB PROJECT_HEADERS CONFIGURE_DEPENDS libraries/thread_pool/include/*.h)
-
-add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${LIBRARY_SOURCES})
 
 include_directories(include/
     SYSTEM libraries/fmt/include
@@ -62,6 +59,9 @@ include_directories(include/
     SYSTEM libraries/timeManager/include
     SYSTEM libraries/threadPool/include
     SYSTEM libraries/imgui
+    SYSTEM libraries/glad/include
+    SYSTEM libraries/glfw/include
+    SYSTEM libraries/glm/include
 )
 
 # Link raylib to main
@@ -73,6 +73,9 @@ target_link_libraries(${PROJECT_NAME}
     profiler
     timeManager
     threadPool
+    glfw
+    ${GLFW_LIBRARIES}
+    ${GLAD_LIBRARIES}
 )
 
 # Make main find the <raylib.h> header (and others)
