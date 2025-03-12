@@ -26,7 +26,7 @@ static const char* castToString( const unsigned char* Input ) {
 
 Graphics::Graphics() {}
 
-bool Graphics::initialize() {
+bool Graphics::initialize( const int Width, const int Height ) {
     if ( !glfwInit() ) {
         Trace::message( "Could not start GLFW." );
         return false;
@@ -41,12 +41,11 @@ bool Graphics::initialize() {
     glfwSetErrorCallback( Graphics::GLFWErrorCallback );
 
     // Set additional Window options
-    glfwWindowHint( GLFW_RESIZABLE, windowResizable );
-    glfwWindowHint( GLFW_SAMPLES, windowSamples ); // MSAA
+    glfwWindowHint( GLFW_RESIZABLE, false );
+    glfwWindowHint( GLFW_SAMPLES, 4 ); // MSAA
 
     // Create Window using GLFW
-    Window = glfwCreateWindow( windowWidth, windowHeight, windowTitle.c_str(),
-                               nullptr, nullptr );
+    Window = glfwCreateWindow( Width, Height, "", nullptr, nullptr );
 
     // Ensure the Window is set up correctly
     if ( !Window ) {
@@ -61,14 +60,14 @@ bool Graphics::initialize() {
     gladLoadGL();
 
     Trace::message( fmt::format( "{}: {}",
-                                 CastToString( glGetString( GL_VENDOR ) ),
-                                 CastToString( glGetString( GL_RENDERER ) ) ) );
+                                 castToString( glGetString( GL_VENDOR ) ),
+                                 castToString( glGetString( GL_RENDERER ) ) ) );
     Trace::message( fmt::format( "GLFW\t {}", glfwGetVersionString() ) );
     Trace::message( fmt::format( "OpenGL\t {}",
-                                 CastToString( glGetString( GL_VERSION ) ) ) );
+                                 castToString( glGetString( GL_VERSION ) ) ) );
     Trace::message( fmt::format(
         "GLSL\t {}",
-        CastToString( glGetString( GL_SHADING_LANGUAGE_VERSION ) ) ) );
+        castToString( glGetString( GL_SHADING_LANGUAGE_VERSION ) ) ) );
 
     // Enable depth (Z) buffer (accept "closest" fragment)
     glEnable( GL_DEPTH_TEST );
@@ -89,24 +88,27 @@ bool Graphics::initialize() {
     glClearStencil( 0 );
 
     // Set callbacks
-    glfwSetFramebufferSizeCallback( Window, Graphics::FrameBufferSizeCallback );
-    glfwSetCursorEnterCallback( Window, Graphics::CursorEnterCallback );
-    glfwSetWindowCloseCallback( Window, Input::CloseWindowCallback );
+    glfwSetFramebufferSizeCallback( Window, Graphics::frameBufferSizeCallback );
+    glfwSetCursorEnterCallback( Window, Graphics::cursorEnterCallback );
+    glfwSetWindowCloseCallback( Window, Graphics::closeWindowCallback );
 
-    projection =
-        glm::perspective< float >( glm::radians( 45.f ),
-                                   static_cast< float >( windowWidth ) /
-                                       static_cast< float >( windowHeight ),
-                                   0.1f, 100.0f );
+    Projection = glm::perspective< float >( glm::radians( 45.f ),
+                                            static_cast< float >( Width ) /
+                                                static_cast< float >( Height ),
+                                            0.1f, 1000.0f );
+
+    // Projection = glm::ortho( 0.f, static_cast< float >( Width ), 0.f,
+    //                          static_cast< float >( Height ), 0.1f, 100.f );
 
     return true;
 }
 
 void Graphics::update() {
-    glm::mat4 view = Camera::Instance().GetViewMatrix();
+    glm::mat4 view = Camera::instance().getViewMatrix();
+
     // TODO: setup shaders
     for ( const auto& [key, value] :
-          ShaderManager::Instance().GetShaderList() ) {
+          ShaderManager::instance().getShaderList() ) {
         glUseProgram( value );
         glUniformMatrix4fv( glGetUniformLocation( value, "view" ), 1, GL_FALSE,
                             &view[0][0] );
@@ -118,8 +120,8 @@ void Graphics::update() {
              GL_STENCIL_BUFFER_BIT );
 
     // Draw your scene here
-    for ( auto& func : render_callbacks ) {
-        func();
+    for ( auto& Func : RenderCallbacks ) {
+        Func();
     }
 
     // Flip buffers
@@ -130,22 +132,32 @@ void Graphics::update() {
 }
 
 void Graphics::drawNormal( Model* Model, glm::mat4& Matrix ) {
-    glUseProgram( Model->GetShader() );
+    glUseProgram( Model->getShader() );
 
-    glUniformMatrix4fv( glGetUniformLocation( Model->GetShader(), "model" ), 1,
+    glUniformMatrix4fv( glGetUniformLocation( Model->getShader(), "model" ), 1,
                         GL_FALSE, &Matrix[0][0] );
 
     glUniformMatrix4fv(
-        glGetUniformLocation( Model->GetShader(), "projection" ), 1, GL_FALSE,
-        &projection[0][0] );
+        glGetUniformLocation( Model->getShader(), "projection" ), 1, GL_FALSE,
+        &Projection[0][0] );
 
-    glBindVertexArray( Model->GetMesh()->VAO );
+    glBindVertexArray( Model->getMesh()->VAO );
 
-    glDrawArrays( Model->GetRenderMethod(), 0, Model->GetMesh()->num_vertices );
+    glDrawArrays( Model->getRenderMethod(), 0, Model->getMesh()->NumVertices );
 
     glUseProgram( 0 );
 
     glBindVertexArray( 0 );
+}
+
+void Graphics::drawTriangle( const glm::vec2 P1, const glm::vec2 P2,
+                             const glm::vec2 P3, const glm::vec3 Color ) {
+    glBegin( GL_TRIANGLES );
+    glColor3f( Color.x, Color.y, Color.z );
+    glVertex2f( P1.x, P1.y );
+    glVertex2f( P2.x, P2.y );
+    glVertex2f( P3.x, P3.y );
+    glEnd();
 }
 
 void Graphics::shutdown() {
@@ -177,7 +189,12 @@ void Graphics::GLFWErrorCallback( int Error, const char* Description ) {
     Trace::message( message );
 }
 
-glm::mat4 Graphics::getProjection() { return projection; }
+void Graphics::closeWindowCallback( GLFWwindow* Window ) {
+    glfwSetWindowShouldClose( Window, GL_TRUE );
+    Engine::instance().triggerShutdown();
+}
+
+glm::mat4 Graphics::getProjection() { return Projection; }
 
 Graphics& Graphics::instance() {
     static Graphics graphicsInstance;
@@ -188,6 +205,6 @@ void handleKeyboardInput( GLFWwindow* Window ) {
     // Use escape key for terminating the GLFW Window
     if ( glfwGetKey( Window, GLFW_KEY_ESCAPE ) == GLFW_PRESS ) {
         glfwSetWindowShouldClose( Window, GL_TRUE );
-        Engine::Instance().TriggerShutdown();
+        Engine::instance().triggerShutdown();
     }
 }

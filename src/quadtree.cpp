@@ -1,6 +1,8 @@
 
 #include <limits>
 
+#include <glm/gtc/epsilon.hpp>
+
 #include <fmt/core.h>
 
 #include "quadtree.hpp"
@@ -15,12 +17,12 @@ void Quad::init() {
     Body = nullptr;
 }
 
-unsigned Quad::findQuad( const Vector2& Pos ) {
+unsigned Quad::findQuad( const glm::vec2& Pos ) {
     return ( static_cast< unsigned >( Pos.y > Center.y ) << 1 |
              static_cast< unsigned >( Pos.x > Center.x ) );
 }
 
-bool Quad::intersects( const Vector2& Pos, const float HalfSize_ ) const {
+bool Quad::intersects( const glm::vec2& Pos, const float HalfSize_ ) const {
     bool NotIntersects = ( Pos.x - HalfSize_ > Center.x + HalfSize ) ||
                          ( Pos.x + HalfSize_ < Center.x - HalfSize ) ||
                          ( Pos.y - HalfSize_ > Center.y + HalfSize ) ||
@@ -63,7 +65,7 @@ Quadtree::Quadtree( const Quadtree& ) {}
 
 Quadtree::Quadtree( Quadtree&& ) {}
 
-std::vector< Boid* > Quadtree::query( const Vector2& Pos,
+std::vector< Boid* > Quadtree::query( const glm::vec2& Pos,
                                       const float HalfSize ) {
     std::vector< Boid* > Targets;
 
@@ -73,7 +75,7 @@ std::vector< Boid* > Quadtree::query( const Vector2& Pos,
 }
 
 void Quadtree::query( std::vector< Boid* >& Targets, const Quad* Node,
-                      const Vector2& Pos, const float HalfSize ) {
+                      const glm::vec2& Pos, const float HalfSize ) {
     if ( Node->intersects( Pos, HalfSize ) ) {
         if ( Node->Body != nullptr ) Targets.push_back( Node->Body );
 
@@ -111,7 +113,8 @@ void Quadtree::insert( Boid* ThisBody ) {
     const int Id = Nodes[NodeId]->BodyId;
 
     // If two bodies are in the same location
-    if ( Vector2Equals( OtherBody->getPosition(), ThisBody->getPosition() ) ) {
+    if ( glm::length( OtherBody->getPosition() - ThisBody->getPosition() ) <
+         0.000001f ) {
         Trace::message( "In same location." );
         return;
     }

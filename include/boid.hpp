@@ -6,47 +6,46 @@
 #include <limits>
 #include <memory>
 
-#include "raylib.h"
+#include <glm/glm.hpp>
 
 struct BoidsUpdateValues {
     BoidsUpdateValues()
         : AvgVelocity( 0.f ), AvgPosition( 0.f ), AvgAvoid( 0.f ), Count( 0 ) {}
 
-    Vector2 AvgVelocity;
-    Vector2 AvgPosition;
-    Vector2 AvgAvoid;
+    glm::vec2 AvgVelocity;
+    glm::vec2 AvgPosition;
+    glm::vec2 AvgAvoid;
     size_t Count;
 };
 
 class Boid {
 public:
-    Boid( const Vector2& Position_, const float Scale_ );
-    Boid( const Vector2& Position_, const Vector2& Velocity_,
-          const float Scale_, const float SimScale_, const size_t Id_ );
+    Boid( const glm::vec2& Position_ );
+    Boid( const glm::vec2& Position_, const glm::vec2& Velocity_,
+          const size_t Id_ );
+
+    void init( const glm::vec2& Pos_, const glm::vec2& Vel_, const size_t Id_ );
 
     void update();
-    void draw() const;
 
-    const Vector2 boundPosition( const Vector2& Bounds ) const;
+    const glm::vec2 boundPosition( const glm::vec2& Bounds,
+                                   const float BoundCorrection ) const;
 
-    void setVelocity( const Vector2& Velocity_ );
-    void setPosition( const Vector2& Velocity_ );
+    void setVelocity( const glm::vec2& Velocity_ );
+    void setPosition( const glm::vec2& Velocity_ );
 
-    const Vector2& getPosition() const;
-    const Vector2& getVelocity() const;
+    const glm::vec2& getPosition() const;
+    const glm::vec2& getVelocity() const;
+
+    const glm::vec2& getFwd() const;
 
     const size_t getId() const;
 
 private:
-    Vector2 Position = { 0.f };
-    Vector2 Velocity = { 0.f };
+    glm::vec2 Position{ 0.f };
+    glm::vec2 Velocity{ 0.f };
 
-    float Scale = 7.5f;
-    float SimScale = 1.f;
-
-    float BoundCorrection = 1.f;
-
-    const Vector2 Fwd = { 1.f, 0.f };
+    const glm::vec2 Fwd = { 1.f, 0.f };
 
     size_t Id = std::numeric_limits< int >::max();
 };

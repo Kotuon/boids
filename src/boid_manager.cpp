@@ -3,16 +3,30 @@
 
 #include <numeric>
 
-#include "raymath.h"
+#include <glm/gtc/random.hpp>
+#include <glm/ext/matrix_transform.hpp>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include <fmt/core.h>
 #include "trace.hpp"
 
-BoidManager::BoidManager( const Vector2 Bounds_ ) : Bounds( Bounds_ ) {
-    const float Scale = LocalSize / 13.f;
+#include "model_manager.hpp"
+#include "shader_manager.hpp"
+
+#include "graphics.hpp"
+
+BoidManager::BoidManager( const glm::vec2 Bounds_ ) : Bounds( Bounds_ ) {
+    Scale = LocalSize / 13.f;
 
     LocalSize *= SimScale;
     SpeedLimit *= SimScale;
+
+    Shader = ShaderManager::instance().getShader( "shaders/boid_vert.glsl",
+                                                  "shaders/boid_frag.glsl" );
+
+    BoidModel = ModelManager::instance().getModel( "models/boid3dfull.obj",
+                                                   Shader, true );
 
     QInstance = std::make_unique< Quadtree >();
 
@@ -21,23 +35,37 @@ BoidManager::BoidManager( const Vector2 Bounds_ ) : Bounds( Bounds_ ) {
 
     Stp->initialize( &BoidManager::updateThreadWorker, this );
 
-    // Vector2 Positions[2] = { Vector2( 10.f, 10.f ),
-    //                          Vector2( Bounds.x - 10.f, Bounds.y - 10.f ) };
-
     for ( size_t i = 0; i < MAX; ++i ) {
-        const Vector2 Pos( static_cast< float >( GetRandomValue(
-                               0, static_cast< int >( Bounds.x ) ) ),
-                           static_cast< float >( GetRandomValue(
-                               0, static_cast< int >( Bounds.y ) ) ) );
+        const glm::vec2 Pos( static_cast< float >( glm::linearRand(
+                                 static_cast< int >( Bounds.x ),
+                                 static_cast< int >( Bounds.y ) ) ),
+                             static_cast< float >( glm::linearRand(
+                                 static_cast< int >( Bounds.x ),
+                                 static_cast< int >( Bounds.y ) ) ) );
 
-        // const Vector2 Pos = Positions[i];
+        // const glm::vec2 Pos( 0.f, 0.f );
 
-        // const Vector2 Vel( 0.f );
-        const Vector2 Vel( static_cast< float >( GetRandomValue( -5, 5 ) ),
-                           static_cast< float >( GetRandomValue( -5, 5 ) ) );
+        const glm::vec2 Vel( static_cast< float >( glm::linearRand( -5, 5 ) ),
+                             static_cast< float >( glm::linearRand( -5, 5 ) ) );
 
-        BoidList[i] = std::make_unique< Boid >( Pos, Vel, Scale, SimScale, i );
+        BoidList[i] = std::make_unique< Boid >( Pos, Vel, i );
     }
+
+    setupBounds( Bounds );
+}
+
+void BoidManager::setupBounds( const glm::vec2 Bounds_ ) {
+    unsigned ContainerShader = ShaderManager::instance().getShader(
+        "shaders/base_vertex.glsl", "shaders/base_fragment.glsl" );
+
+    ContainerInstance.Modelnstance = ModelManager::instance().getModel(
+        "models/cube.obj", GL_TRIANGLES, ContainerShader, false );
+    ContainerInstance.ModelRadius = abs( Bounds_.x ) + abs( Bounds_.y );
+
+    ContainerInstance.Matrix =
+        glm::scale( glm::mat4( 1.f ), { ContainerInstance.ModelRadius,
+                                        ContainerInstance.ModelRadius,
+                                        ContainerInstance.ModelRadius } );
 }
 
 void BoidManager::buildTree() {
@@ -69,75 +97,28 @@ void BoidManager::updateTree() {
             QInstance->query( ThisBoid->getPosition(), LocalSize / 2.f );
 
         BoidsUpdateValues Values;
-        // Trace::message( fmt::format( "Boid#{} Targets:", ThisBoid->getId() ) );
         for ( auto* OtherBoid : Targets ) {
             if ( OtherBoid == ThisBoid ) continue;
-            // Trace::message( fmt::format( "\t\tBoid#{}", OtherBoid->getId() ) );
 
-            Values.Count += 1;
-            Values.AvgVelocity =
-                Vector2Add( Values.AvgVelocity, OtherBoid->getVelocity() );
-            Values.AvgPosition =
-                Vector2Add( Values.AvgPosition, OtherBoid->getPosition() );
+            const float Distance = glm::distance( ThisBoid->getPosition(),
+                                                  OtherBoid->getPosition() );
 
-            const float Distance = Vector2Distance( ThisBoid->getPosition(),
-                                                    OtherBoid->getPosition() );
-
-            // Trace::message( fmt::format( "\t\tBoid#{}: Distance: {}",
-                                        //  OtherBoid->getId(), Distance ) );
-
-            if ( Distance < ( LocalSize * 0.4f ) ) {
-                Values.AvgAvoid = Vector2Subtract(
-                    Values.AvgAvoid,
-                    Vector2Scale( Vector2Normalize( Vector2Subtract(
-                                      OtherBoid->getPosition(),
-                                      ThisBoid->getPosition() ) ),
-                                  10.f / Clamp( Distance, 0.001f, 100.f ) ) );
-            }
+            getVelocityInfo( ThisBoid, OtherBoid, Values, Distance );
         }
 
-        if ( Values.Count > 0 ) {
-            Values.AvgVelocity = Vector2Scale( Values.AvgVelocity,
-                                               1.f / ( Values.Count * 8.f ) );
-
-            Values.AvgPosition =
-                Vector2Scale( Values.AvgPosition, 1.f / Values.Count );
-            Values.AvgPosition =
-                Vector2Subtract( Values.AvgPosition, ThisBoid->getPosition() );
-            Values.AvgPosition =
-                Vector2Scale( Values.AvgPosition, 1.f / 100.f );
-
-            Values.AvgVelocity = Vector2Scale( Values.AvgVelocity, SimScale );
-            Values.AvgPosition = Vector2Scale( Values.AvgPosition, SimScale );
-            Values.AvgAvoid = Vector2Scale( Values.AvgAvoid, SimScale );
-        }
-
-        ThisBoid->setVelocity( Vector2Add(
-            ThisBoid->getVelocity(),
-            Vector2Add( Values.AvgVelocity,
-                        Vector2Add( Values.AvgPosition,
-                                    Vector2Add( Values.AvgAvoid,
-                                                ThisBoid->boundPosition(
-                                                    Bounds ) ) ) ) ) );
-
-        if ( Vector2Length( ThisBoid->getVelocity() ) > SpeedLimit ) {
-            ThisBoid->setVelocity( Vector2Scale(
-                Vector2Normalize( ThisBoid->getVelocity() ), SpeedLimit ) );
-        }
+        adjustVelocityInfo( ThisBoid, Values );
+        updateBoidVelocity( ThisBoid, Values );
     }
 
     for ( size_t i = 0; i < MAX; ++i ) {
         auto& ThisBoid = BoidList[i];
 
-        ThisBoid->setPosition(
-            Vector2Add( ThisBoid->getPosition(), ThisBoid->getVelocity() ) );
+        ThisBoid->setPosition( ThisBoid->getPosition() +
+                               ThisBoid->getVelocity() );
     }
 }
 
 void BoidManager::updateThread() {
-
-    // buildTree();
-
     UStatus = S_Velocity;
     Stp->runTask();
 
@@ -157,60 +138,23 @@ void BoidManager::updateTreeThreadWorker( const size_t ThreadId ) {
         for ( size_t i = Start; i < End; ++i ) {
             auto& Boid1 = BoidList[i];
 
-            Vector2 AvgPosition( 0.f ); // Cohesion
-            Vector2 AvgVelocity( 0.f ); // Alignment
-            Vector2 AvgAvoid( 0.f );    // Seperation
-            size_t Count = 0;
-
+            BoidsUpdateValues Values;
             for ( auto& Boid2 : BoidList ) {
-                const float Distance = Vector2Distance( Boid1->getPosition(),
-                                                        Boid2->getPosition() );
+                const float Distance =
+                    glm::distance( Boid1->getPosition(), Boid2->getPosition() );
                 if ( Distance >= LocalSize ) continue;
 
-                Count += 1;
-                // Alignment
-                AvgVelocity = Vector2Add( AvgVelocity, Boid2->getVelocity() );
-                // Cohesion
-                AvgPosition = Vector2Add( AvgPosition, Boid2->getPosition() );
-                // Separation
-                if ( Distance >= LocalSize * 0.4f ) continue;
-                AvgAvoid = Vector2Subtract(
-                    AvgAvoid,
-                    Vector2Scale(
-                        Vector2Normalize( Vector2Subtract(
-                            Boid2->getPosition(), Boid1->getPosition() ) ),
-                        10.f / Clamp( Distance, 0.001f, 100.f ) ) );
+                getVelocityInfo( Boid1.get(), Boid2.get(), Values, Distance );
             }
 
-            AvgVelocity = Vector2Scale( AvgVelocity, 1.f / ( Count * 8.f ) );
-
-            AvgPosition = Vector2Scale( AvgPosition, 1.f / Count );
-            AvgPosition = Vector2Subtract( AvgPosition, Boid1->getPosition() );
-            AvgPosition = Vector2Scale( AvgPosition, 1.f / 100.f );
-
-            AvgVelocity = Vector2Scale( AvgVelocity, SimScale );
-            AvgPosition = Vector2Scale( AvgPosition, SimScale );
-            AvgAvoid = Vector2Scale( AvgAvoid, SimScale );
-
-            Boid1->setVelocity( Vector2Add(
-                Boid1->getVelocity(),
-                Vector2Add(
-                    AvgVelocity,
-                    Vector2Add( AvgPosition,
-                                Vector2Add( AvgAvoid, Boid1->boundPosition(
-                                                          Bounds ) ) ) ) ) );
-
-            if ( Vector2Length( Boid1->getVelocity() ) > SpeedLimit ) {
-                Boid1->setVelocity( Vector2Scale(
-                    Vector2Normalize( Boid1->getVelocity() ), SpeedLimit ) );
-            }
+            adjustVelocityInfo( Boid1.get(), Values );
+            updateBoidVelocity( Boid1.get(), Values );
         }
     } else if ( UStatus == S_Position ) {
         for ( size_t i = Start; i < End; ++i ) {
             auto& Boid1 = BoidList[i];
 
-            Boid1->setPosition(
-                Vector2Add( Boid1->getPosition(), Boid1->getVelocity() ) );
+            Boid1->setPosition( Boid1->getPosition() + Boid1->getVelocity() );
         }
     }
 }
@@ -227,138 +171,149 @@ void BoidManager::updateThreadWorker( const size_t ThreadId ) {
         for ( size_t i = Start; i < End; ++i ) {
             auto& Boid1 = BoidList[i];
 
-            Vector2 AvgPosition( 0.f ); // Cohesion
-            Vector2 AvgVelocity( 0.f ); // Alignment
-            Vector2 AvgAvoid( 0.f );    // Seperation
-            size_t Count = 0;
-
+            BoidsUpdateValues Values;
             for ( auto& Boid2 : BoidList ) {
-                const float Distance = Vector2Distance( Boid1->getPosition(),
-                                                        Boid2->getPosition() );
+                const float Distance =
+                    glm::distance( Boid1->getPosition(), Boid2->getPosition() );
                 if ( Distance >= LocalSize ) continue;
 
-                Count += 1;
-                // Alignment
-                AvgVelocity = Vector2Add( AvgVelocity, Boid2->getVelocity() );
-                // Cohesion
-                AvgPosition = Vector2Add( AvgPosition, Boid2->getPosition() );
-                // Separation
-                if ( Distance >= LocalSize * 0.4f ) continue;
-                AvgAvoid = Vector2Subtract(
-                    AvgAvoid,
-                    Vector2Scale(
-                        Vector2Normalize( Vector2Subtract(
-                            Boid2->getPosition(), Boid1->getPosition() ) ),
-                        10.f / Clamp( Distance, 0.001f, 100.f ) ) );
+                getVelocityInfo( Boid1.get(), Boid2.get(), Values, Distance );
             }
 
-            AvgVelocity = Vector2Scale( AvgVelocity, 1.f / ( Count * 8.f ) );
+            adjustVelocityInfo( Boid1.get(), Values );
 
-            AvgPosition = Vector2Scale( AvgPosition, 1.f / Count );
-            AvgPosition = Vector2Subtract( AvgPosition, Boid1->getPosition() );
-            AvgPosition = Vector2Scale( AvgPosition, 1.f / 100.f );
-
-            AvgVelocity = Vector2Scale( AvgVelocity, SimScale );
-            AvgPosition = Vector2Scale( AvgPosition, SimScale );
-            AvgAvoid = Vector2Scale( AvgAvoid, SimScale );
-
-            Boid1->setVelocity( Vector2Add(
-                Boid1->getVelocity(),
-                Vector2Add(
-                    AvgVelocity,
-                    Vector2Add( AvgPosition,
-                                Vector2Add( AvgAvoid, Boid1->boundPosition(
-                                                          Bounds ) ) ) ) ) );
-
-            if ( Vector2Length( Boid1->getVelocity() ) > SpeedLimit ) {
-                Boid1->setVelocity( Vector2Scale(
-                    Vector2Normalize( Boid1->getVelocity() ), SpeedLimit ) );
-            }
+            updateBoidVelocity( Boid1.get(), Values );
         }
     } else if ( UStatus == S_Position ) {
         for ( size_t i = Start; i < End; ++i ) {
             auto& Boid1 = BoidList[i];
 
-            Boid1->setPosition(
-                Vector2Add( Boid1->getPosition(), Boid1->getVelocity() ) );
+            Boid1->setPosition( Boid1->getPosition() + Boid1->getVelocity() );
         }
     }
 }
 
 void BoidManager::update() {
     for ( auto& Boid1 : BoidList ) {
-        Vector2 AvgPosition( 0.f ); // Cohesion
-        Vector2 AvgVelocity( 0.f ); // Alignment
-        Vector2 AvgAvoid( 0.f );    // Seperation
-        size_t Count = 0;
-
+        BoidsUpdateValues Values;
         for ( auto& Boid2 : BoidList ) {
             const float Distance =
-                Vector2Distance( Boid1->getPosition(), Boid2->getPosition() );
+                glm::distance( Boid1->getPosition(), Boid2->getPosition() );
             if ( Distance >= LocalSize ) continue;
 
-            Count += 1;
-            // Alignment
-            AvgVelocity = Vector2Add( AvgVelocity, Boid2->getVelocity() );
-            // Cohesion
-            AvgPosition = Vector2Add( AvgPosition, Boid2->getPosition() );
-            // Separation
-            if ( Distance >= LocalSize * 0.4f ) continue;
-            AvgAvoid = Vector2Subtract(
-                AvgAvoid,
-                Vector2Scale(
-                    Vector2Normalize( Vector2Subtract( Boid2->getPosition(),
-                                                       Boid1->getPosition() ) ),
-                    10.f / Clamp( Distance, 0.001f, 100.f ) ) );
+            getVelocityInfo( Boid1.get(), Boid2.get(), Values, Distance );
         }
 
-        AvgVelocity = Vector2Scale( AvgVelocity, 1.f / Count );
-        AvgVelocity = Vector2Scale( AvgVelocity, 1.f / 8.f );
-
-        AvgPosition = Vector2Scale( AvgPosition, 1.f / Count );
-        AvgPosition = Vector2Subtract( AvgPosition, Boid1->getPosition() );
-        AvgPosition = Vector2Scale( AvgPosition, 1.f / 100.f );
-
-        Boid1->setVelocity( Vector2Add(
-            Boid1->getVelocity(),
-            Vector2Add(
-                AvgVelocity,
-                Vector2Add( AvgPosition,
-                            Vector2Add( AvgAvoid, Boid1->boundPosition(
-                                                      Bounds ) ) ) ) ) );
-
-        if ( Vector2Length( Boid1->getVelocity() ) > SpeedLimit ) {
-            Boid1->setVelocity( Vector2Scale(
-                Vector2Normalize( Boid1->getVelocity() ), SpeedLimit ) );
-        }
+        adjustVelocityInfo( Boid1.get(), Values );
+        updateBoidVelocity( Boid1.get(), Values );
     }
 
     for ( auto& Boid1 : BoidList ) {
-        Boid1->setPosition(
-            Vector2Add( Boid1->getPosition(), Boid1->getVelocity() ) );
+        Boid1->setPosition( Boid1->getPosition() + Boid1->getVelocity() );
     }
 }
 
-void BoidManager::draw() const {
-    for ( auto& BoidInstance : BoidList ) {
-        BoidInstance->draw();
+void BoidManager::draw() {
+    // Trace::message( "Drawing." );
+
+    // for ( auto& BoidInstance : BoidList ) {
+    //     BoidInstance->draw();
+    // }
+
+    size_t PosCounter = 0;
+    size_t AngleCounter = 0;
+
+    // const float HalfLocal = LocalSize * 0.5f;
+
+    for ( size_t i = 0; i < MAX; ++i ) {
+        auto& BoidInstance = BoidList[i];
+
+        const glm::vec2& Pos = BoidInstance->getPosition();
+        // const glm::vec2 Pos = { 0.f, 0.f };
+
+        Positions[PosCounter++] = 0.f;
+        Positions[PosCounter++] = Pos.y;
+        Positions[PosCounter++] = Pos.x;
+
+        const glm::vec2& Fwd = BoidInstance->getFwd();
+        const glm::vec2 NormVel =
+            glm::normalize( -BoidInstance->getVelocity() );
+
+        const float Angle = glm::atan( NormVel.x * Fwd.y - NormVel.y * Fwd.x,
+                                       NormVel.x * Fwd.x + Fwd.y * NormVel.y );
+
+        Angles[AngleCounter++] = Angle;
     }
+
+    glBindBuffer( GL_ARRAY_BUFFER, BoidModel->getMesh()->PositionVBO );
+    glBufferSubData( GL_ARRAY_BUFFER, 0, sizeof( float ) * 3 * MAX,
+                     Positions.data() );
+    glBindBuffer( GL_ARRAY_BUFFER, 0 );
+
+    glBindBuffer( GL_ARRAY_BUFFER, BoidModel->getMesh()->AngleVBO );
+    glBufferSubData( GL_ARRAY_BUFFER, 0, sizeof( float ) * MAX, Angles.data() );
+    glBindBuffer( GL_ARRAY_BUFFER, 0 );
+
+    glUseProgram( BoidModel->getShader() );
+
+    glUniformMatrix4fv(
+        glGetUniformLocation( BoidModel->getShader(), "projection" ), 1,
+        GL_FALSE, &Graphics::instance().getProjection()[0][0] );
+
+    glUniform1f( glGetUniformLocation( BoidModel->getShader(), "scale" ),
+                 Scale );
+
+    glBindVertexArray( BoidModel->getMesh()->VAO );
+
+    glDrawArraysInstanced( BoidModel->getRenderMethod(), 0,
+                           BoidModel->getMesh()->NumVertices, MAX );
+
+    glUseProgram( 0 );
+    glBindVertexArray( 0 );
+
+    Graphics::instance().drawNormal( ContainerInstance.Modelnstance,
+                                     ContainerInstance.Matrix );
 }
 
-Vector2 BoidManager::accumulatePosition() const {
-    Vector2 Result( 0.f );
-    for ( auto& BoidInstance : BoidList ) {
-        Result = Vector2Add( Result, BoidInstance->getPosition() );
+#include "imgui.h"
+void BoidManager::displayEditorWindow() {
+    ImGui::Begin( "BoidManager##1" );
+
+    ImGui::Text( fmt::format( "Boid count: {}", MAX ).c_str() );
+
+    if ( ImGui::Button( "Reset##1" ) ) {
+        Scale = ( LocalSize / SimScale ) / 13.f;
+
+        for ( size_t i = 0; i < MAX; ++i ) {
+            const glm::vec2 Pos( static_cast< float >( glm::linearRand(
+                                     static_cast< int >( Bounds.x ),
+                                     static_cast< int >( Bounds.y ) ) ),
+                                 static_cast< float >( glm::linearRand(
+                                     static_cast< int >( Bounds.x ),
+                                     static_cast< int >( Bounds.y ) ) ) );
+
+            const glm::vec2 Vel(
+                static_cast< float >( glm::linearRand( -5, 5 ) ),
+                static_cast< float >( glm::linearRand( -5, 5 ) ) );
+
+            BoidList[i]->init( Pos, Vel, i );
+        }
     }
 
-    return Result;
-}
-
-Vector2 BoidManager::accumulateVelocity() const {
-    Vector2 Result( 0.f );
-    for ( auto& BoidInstance : BoidList ) {
-        Result = Vector2Add( Result, BoidInstance->getVelocity() );
+    if ( ImGui::SliderFloat( "SimScale", &SimScale, 0.01f, 5.f ) ) {
+        LocalSize *= SimScale;
+        SpeedLimit *= SimScale;
     }
 
-    return Result;
+    if ( ImGui::SliderFloat( "LocalSize", &LocalSize, 0.01f, 100.f ) ) {
+    }
+
+    if ( ImGui::SliderFloat( "BoundCorrection", &BoundCorrection, 0.f,
+                             0.375f ) ) {
+    }
+
+    if ( ImGui::SliderFloat( "SpeedLimit", &SpeedLimit, 0.f, 0.35f ) ) {
+    }
+
+    ImGui::End();
 }

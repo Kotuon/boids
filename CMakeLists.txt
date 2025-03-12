@@ -47,6 +47,12 @@ file(GLOB_RECURSE PROJECT_SOURCES
     src/*.c
 )
 
+file(COPY assets/shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE})
+file(COPY assets/models DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE})
+
+file(COPY assets/shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY assets/models DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${LIBRARY_SOURCES})
 
 include_directories(include/
@@ -66,16 +72,15 @@ include_directories(include/
 
 # Link raylib to main
 target_link_libraries(${PROJECT_NAME}
-    raylib
+    glfw
+    ${GLFW_LIBRARIES}
+    ${GLAD_LIBRARIES}
     fmt::fmt
     traceSystem
     crashHandler
     profiler
     timeManager
     threadPool
-    glfw
-    ${GLFW_LIBRARIES}
-    ${GLAD_LIBRARIES}
 )
 
 # Make main find the <raylib.h> header (and others)

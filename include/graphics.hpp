@@ -8,8 +8,8 @@
 #include <vector>
 
 // System headers
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 #include <string>
 #include <memory>
 #include <glm/glm.hpp>
@@ -18,11 +18,14 @@ class Model;
 
 class Graphics {
 public:
-    bool initialize();
+    bool initialize( const int Width, const int Height );
     void update();
     void shutdown();
 
     void drawNormal( Model* Model, glm::mat4& Matrix );
+
+    void drawTriangle( const glm::vec2 P1, const glm::vec2 P2,
+                       const glm::vec2 P3, const glm::vec3 Color );
 
     GLFWwindow* getWindow() const;
 
@@ -31,6 +34,8 @@ public:
     static void cursorEnterCallback( GLFWwindow* Window, int Entered );
 
     static void GLFWErrorCallback( int Error, const char* Description );
+
+    static void closeWindowCallback( GLFWwindow* Window );
 
     template < typename TCallback >
     inline void addRenderCallback( TCallback&& Callback ) {

@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{81034462-4987-3322-996B-569B8348E8EB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>boids</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">boids.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">boids.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">boids.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">boids.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">boids</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/threadPool/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/imgui" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glad/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glfw/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libraries\glfw\src\Debug\glfw3.lib;libraries\fmt\Debug\fmtd.lib;libraries\traceSystem\Debug\traceSystem.lib;libraries\crashHandler\Debug\crashHandler.lib;libraries\profiler\Debug\profiler.lib;libraries\timeManager\Debug\timeManager.lib;libraries\threadPool\Debug\threadPool.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/Debug/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/Debug/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/threadPool/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/imgui" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glad/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glfw/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libraries\glfw\src\Release\glfw3.lib;libraries\fmt\Release\fmt.lib;libraries\traceSystem\Release\traceSystem.lib;libraries\crashHandler\Release\crashHandler.lib;libraries\profiler\Release\profiler.lib;libraries\timeManager\Release\timeManager.lib;libraries\threadPool\Release\threadPool.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/Release/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/Release/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/threadPool/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/imgui" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glad/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glfw/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libraries\glfw\src\MinSizeRel\glfw3.lib;libraries\fmt\MinSizeRel\fmt.lib;libraries\traceSystem\MinSizeRel\traceSystem.lib;libraries\crashHandler\MinSizeRel\crashHandler.lib;libraries\profiler\MinSizeRel\profiler.lib;libraries\timeManager\MinSizeRel\timeManager.lib;libraries\threadPool\MinSizeRel\threadPool.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/MinSizeRel/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/MinSizeRel/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/fmt/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/eigen" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/traceSystem/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/crashHandler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/profiler/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/timeManager/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/threadPool/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/imgui" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glad/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glfw/include" /external:I "C:/Users/Kelson/Documents/Projects/boids/libraries/glm/include" /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Kelson\Documents\Projects\boids\include;\src;C:\Users\Kelson\Documents\Projects\boids\libraries\fmt\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm;C:\Users\Kelson\Documents\Projects\boids\libraries\eigen;C:\Users\Kelson\Documents\Projects\boids\libraries\traceSystem\include;C:\Users\Kelson\Documents\Projects\boids\libraries\crashHandler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\profiler\include;C:\Users\Kelson\Documents\Projects\boids\libraries\timeManager\include;C:\Users\Kelson\Documents\Projects\boids\libraries\threadPool\include;C:\Users\Kelson\Documents\Projects\boids\libraries\imgui;C:\Users\Kelson\Documents\Projects\boids\libraries\glad\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glfw\include;C:\Users\Kelson\Documents\Projects\boids\libraries\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>libraries\glfw\src\RelWithDebInfo\glfw3.lib;libraries\fmt\RelWithDebInfo\fmt.lib;libraries\traceSystem\RelWithDebInfo\traceSystem.lib;libraries\crashHandler\RelWithDebInfo\crashHandler.lib;libraries\profiler\RelWithDebInfo\profiler.lib;libraries\timeManager\RelWithDebInfo\timeManager.lib;libraries\threadPool\RelWithDebInfo\threadPool.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/RelWithDebInfo/boids.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/RelWithDebInfo/boids.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Kelson\Documents\Projects\boids\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids "-BC:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug" --check-stamp-file "C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids "-BC:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug" --check-stamp-file "C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids "-BC:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug" --check-stamp-file "C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Kelson/Documents/Projects/boids/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kelson/Documents/Projects/boids "-BC:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug" --check-stamp-file "C:/Users/Kelson/Documents/Projects/boids/build/Visual Studio Community 2022 Release - amd64/Debug/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeCXXCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeRCCompiler.cmake;C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\3.28.0-rc3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\boid.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\boid_manager.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\camera.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\editor.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\engine.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\graphics.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\input.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\main.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\memory_bank.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\model_manager.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\quadtree.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\src\shader_manager.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\glad\src\glad.c" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_demo.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_draw.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_tables.cpp" />
+    <ClCompile Include="C:\Users\Kelson\Documents\Projects\boids\libraries\imgui\imgui_widgets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\ZERO_CHECK.vcxproj">
+      <Project>{3523F673-5534-3E11-A392-F7DA5B64E1DF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\crashHandler\crashHandler.vcxproj">
+      <Project>{4B4E6951-E4A2-3BAC-9CB2-EAF20907452B}</Project>
+      <Name>crashHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\fmt\fmt.vcxproj">
+      <Project>{EE0F199A-87BB-3F95-9736-3B536C57B01B}</Project>
+      <Name>fmt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\glfw\src\glfw.vcxproj">
+      <Project>{1F90A16F-BCD0-3E63-8E1F-CC82D96DD427}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\profiler\profiler.vcxproj">
+      <Project>{14932E70-5B5F-352F-9C1E-DDAEB3EDCB04}</Project>
+      <Name>profiler</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\threadPool\threadPool.vcxproj">
+      <Project>{5A909F6B-174B-3D48-AD5B-BF6A0193B672}</Project>
+      <Name>threadPool</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\timeManager\timeManager.vcxproj">
+      <Project>{961500D6-ABFF-31AC-966F-EEF96F33118A}</Project>
+      <Name>timeManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Kelson\Documents\Projects\boids\build\Visual Studio Community 2022 Release - amd64\Debug\libraries\traceSystem\traceSystem.vcxproj">
+      <Project>{C9035A48-81A5-36CF-B129-3935CEE33521}</Project>
+      <Name>traceSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

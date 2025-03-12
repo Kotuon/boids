@@ -22,3 +22,7 @@
 [submodule "libraries/glm"]
 	path = libraries/glm
 	url = https://github.com/g-truc/glm.git
+[submodule "libraries/glad"]
+	path = libraries/glad
+	url = https://github.com/Dav1dde/glad.git
+	branch = c

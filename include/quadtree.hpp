@@ -7,8 +7,7 @@
 #include <functional>
 #include <vector>
 
-#include "raylib.h"
-#include "raymath.h"
+#include <glm/glm.hpp>
 
 #include "boid.hpp"
 #include "memory_bank.hpp"
@@ -23,10 +22,10 @@ struct Quad {
 
     template < std::size_t SIZE >
     Quad* createRoot( const std::array< BoidPtr, SIZE >& ParticleList ) {
-        Vector2 Min = Vector2{ std::numeric_limits< float >::max(),
-                               std::numeric_limits< float >::max() };
-        Vector2 Max = Vector2{ std::numeric_limits< float >::min(),
-                               std::numeric_limits< float >::min() };
+        glm::vec2 Min = glm::vec2{ std::numeric_limits< float >::max(),
+                                   std::numeric_limits< float >::max() };
+        glm::vec2 Max = glm::vec2{ std::numeric_limits< float >::min(),
+                                   std::numeric_limits< float >::min() };
 
         for ( auto& ThisParticle : ParticleList ) {
             Min.x = std::min( Min.x, ThisParticle->getPosition().x );
@@ -35,8 +34,7 @@ struct Quad {
             Max.y = std::max( Max.y, ThisParticle->getPosition().y );
         }
 
-        Center = Vector2Add( Min, Max );
-        Center = Vector2Scale( Center, 0.5f );
+        Center = ( Min + Max ) * 0.5f;
 
         Size = std::max( Max.x - Min.x, Max.y - Min.y );
         HalfSize = Size * 0.5f;
@@ -44,9 +42,9 @@ struct Quad {
         return this;
     }
 
-    unsigned findQuad( const Vector2& Pos );
+    unsigned findQuad( const glm::vec2& Pos );
 
-    bool intersects( const Vector2& Pos, const float HalfSize_ ) const;
+    bool intersects( const glm::vec2& Pos, const float HalfSize_ ) const;
 
     bool hasChildren() const;
     bool isEmpty() const;
@@ -58,7 +56,7 @@ struct Quad {
     unsigned Children = 0;
     unsigned Next = 0;
 
-    Vector2 Center = { 0.f };
+    glm::vec2 Center{ 0.f };
 
     Boid* Body = nullptr;
 
@@ -83,7 +81,7 @@ public:
         RootNode->createRoot( ParticleList );
     }
 
-    std::vector< Boid* > query( const Vector2& Pos, const float HalfSize );
+    std::vector< Boid* > query( const glm::vec2& Pos, const float HalfSize );
 
     void insert( Boid* ThisBody );
 
@@ -102,36 +100,29 @@ public:
         while ( true ) {
             const auto& Node = Nodes[NodeId];
 
-            const float DistanceSqr =
-                Vector2DistanceSqr( ThisBody->getPosition(), Node->Center );
+            const float Distance =
+                glm::distance( ThisBody->getPosition, Node->Center );
 
             if ( !Node->hasChildren() ||
-                 ( Node->Size * Node->Size ) < DistanceSqr * SquareTheta ) {
+                 ( Node->Size ) < Distance * SquareTheta ) {
                 // TODO: Compute velocity
 
                 if ( !Node->isEmpty() ) {
                     auto& OtherBoid = ParticleList[Node->BodyId];
 
-                    const float Distance = Vector2Distance(
-                        ThisBody->getPosition(), OtherBoid->getPosition() );
-
                     if ( Distance < LocalSize ) {
                         Values.Count += 1;
                         // Alignment
-                        Values.AvgVelocity = Vector2Add(
-                            Values.AvgVelocity, OtherBoid->getVelocity() );
+                        Values.AvgVelocity += OtherBoid->getVelocity();
                         // Cohesion
-                        Values.AvgPosition = Vector2Add(
-                            Values.AvgPosition, OtherBoid->getPosition() );
+                        Values.AvgPosition += OtherBoid->getPosition();
                         // Separation
                         if ( Distance < ( LocalSize * 0.4f ) ) {
-                            Values.AvgAvoid = Vector2Subtract(
-                                Values.AvgAvoid,
-                                Vector2Scale(
-                                    Vector2Normalize( Vector2Subtract(
-                                        OtherBoid->getPosition(),
-                                        ThisBody->getPosition() ) ),
-                                    10.f / Clamp( Distance, 0.001f, 100.f ) ) );
+                            Values.AvgAvoid -=
+                                glm::normalize( OtherBoid->getPosition() -
+                                                ThisBody->getPosition() ) *
+                                ( 10.f /
+                                  glm::clamp( Distance, 0.001f, 100.f ) );
                         }
                     }
                 }
@@ -150,7 +141,7 @@ public:
 
 private:
     void query( std::vector< Boid* >& Targets, const Quad* Node,
-                const Vector2& Pos, const float HalfSize );
+                const glm::vec2& Pos, const float HalfSize );
 
     std::vector< std::unique_ptr< Quad > > Nodes;
     std::vector< unsigned > Parents;

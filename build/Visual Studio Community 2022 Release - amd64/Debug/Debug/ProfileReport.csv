@@ -1,0 +1,167 @@
+Function, Hit Count, Percentage
+"stbtt__rasterize_sorted_edges",1,0.012802%
+"ImFontAtlas::GetTexDataAsRGBA32",1,0.012802%
+"ZwCreateFile",5,0.064012%
+"NtQueryInformationThread",178,2.278838%
+"NtUserPeekMessage",32,0.409679%
+"NtUserGetQueueStatusReadonly",1,0.012802%
+"NtUserGetProp",45,0.576111%
+"NtUserMessageCall",418,5.351428%
+"ZwYieldExecution",5,0.064012%
+"ILT+19905(??C?$unique_ptrVBoidU?$default_deleteVBoidstdstdQEBAPEAVBoidXZ)",1,0.012802%
+"NtUserSetWindowLong",116,1.485085%
+"NtUserWindowFromDC",120,1.536295%
+"ImGui::CalcItemSize",1,0.012802%
+"NtFindAtom",127,1.625912%
+"NtUserEnumDisplaySettings",318,4.071182%
+"swapBuffersWGL",1,0.012802%
+"NtUserCallTwoParam",223,2.854948%
+"NtGdiDdDDIWaitForVerticalBlankEvent",5418,69.363716%
+"XHook",1,0.012802%
+"ImDrawList::AddConvexPolyFilled",8,0.102420%
+"DrvPresentBuffers",70,0.896172%
+"_p__commode",1,0.012802%
+"NtGdiDdDDIEscape",164,2.099603%
+"RtlGetCurrentServiceSessionId",2,0.025605%
+"NtUserGetKeyState",42,0.537703%
+"NtGdiDdDDIDestroyAllocation2",1,0.012802%
+"NtDxgkSubmitPresentToHwQueue",79,1.011394%
+"NtUserGetTitleBarInfo",15,0.192037%
+"ImGui::TabBarLayout",1,0.012802%
+"glm::max<float>",3,0.038407%
+"NtGdiGetDCDword",7,0.089617%
+"NtGdiDdDDISubmitCommandToHwQueue",25,0.320061%
+"NtUserGetThreadState",21,0.268852%
+"ImGui::Begin",4,0.051210%
+"NtUserWindowFromPoint",31,0.396876%
+"BoidManager::draw",2,0.025605%
+"glm::inversesqrt<float>",4,0.051210%
+"NtGdiDdDDICreateAllocation",1,0.012802%
+"glm::operator*<float,0>",6,0.076815%
+"_RTC_CheckStackVars",13,0.166432%
+"NtUserGetWindowCompositionAttribute",9,0.115222%
+"fmt::v11::detail::write_float<char,fmt::v11::basic_appender<char>,float>",2,0.025605%
+"NtGdiGetTransform",3,0.038407%
+"fmt::v11::detail::write<char,fmt::v11::basic_appender<char>,unsigned __int64,0>",2,0.025605%
+"hypotf",5,0.064012%
+"ImVector<ImDrawCmd>::operator[]",1,0.012802%
+"NtUserIsNonClientDpiScalingEnabled",20,0.256049%
+"NtUserGetDpiForMonitor",35,0.448086%
+"cputws",1,0.012802%
+"ImVec2::operator[]",4,0.051210%
+"glm::clamp<float>",1,0.012802%
+"NtUserIsChildWindowDpiMessageEnabled",20,0.256049%
+"NtGdiGetRandomRgn",8,0.102420%
+"glm::detail::compute_dot<glm::vec<2,float,0>,float,0>::call",4,0.051210%
+"ImGui::SetNextWindowPos",1,0.012802%
+"fmt::v11::detail::parse_precision<char>",1,0.012802%
+"ImGui::UpdateViewportsNewFrame",1,0.012802%
+"ImFont::RenderText",2,0.025605%
+"RtlVirtualUnwind",1,0.012802%
+"glm::min<float>",4,0.051210%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::max_size",1,0.012802%
+"Boid::getPosition",2,0.025605%
+"RtlValidateHeap",2,0.025605%
+"NtUserCalcMenuBar",12,0.153629%
+"memcpy",1,0.012802%
+"RtlAllocateHeap",5,0.064012%
+"BoidManager::getVelocityInfo",3,0.038407%
+"ImFont::CalcTextSizeA",2,0.025605%
+"NtUserIsTopLevelWindow",11,0.140827%
+"vk_gr2608GetInstanceProcAddr",5,0.064012%
+"ImGui::ErrorCheckNewFrameSanityChecks",1,0.012802%
+"glm::operator+<float,0>",1,0.012802%
+"ImGui::RenderRectFilledWithHole",1,0.012802%
+"fmt::v11::detail::parse_dynamic_spec<char>",2,0.025605%
+"operator+",1,0.012802%
+"memcmp",1,0.012802%
+"ImFont::FindGlyph",1,0.012802%
+"Engine::update",1,0.012802%
+"IntersectRect",1,0.012802%
+"std::_Lockit::~_Lockit",2,0.025605%
+"NtUserHwndQueryRedirectionInfo",6,0.076815%
+"RtlReleaseSRWLockExclusive",2,0.025605%
+"DrvValidateVersion",1,0.012802%
+"glm::vec<3,float,0>::operator*=<float>",1,0.012802%
+"fmt::v11::detail::buffer<char>::try_reserve",1,0.012802%
+"DllMain",2,0.025605%
+"ImGui_ImplOpenGL3_RenderDrawData",2,0.025605%
+"RtlLeaveCriticalSection",1,0.012802%
+"memmove",1,0.012802%
+"ImGui::DockNodeUpdate",3,0.038407%
+"glm::normalize<2,float,0>",2,0.025605%
+"ImVector<ImGuiWindowStackData>::back",1,0.012802%
+"calloc_base",1,0.012802%
+"glm::distance<2,float,0>",1,0.012802%
+"memset",2,0.025605%
+"ImVector<ImDrawCmd>::resize",1,0.012802%
+"sqrtf",5,0.064012%
+"std::_String_val<std::_Simple_types<char> >::_String_val<std::_Simple_types<char> >",1,0.012802%
+"ImDrawList::AddPolyline",1,0.012802%
+"ImGui::BeginGroup",1,0.012802%
+"glm::mat<4,4,float,0>::operator[]",1,0.012802%
+"ZwQueryLicenseValue",6,0.076815%
+"std::_Binder<std::_Unforced,void (__cdecl Editor::*)(void),Editor *>::operator()<>",1,0.012802%
+"ImGui::IsItemHovered",1,0.012802%
+"NtUserGetThreadDesktop",4,0.051210%
+"_conio_common_vcwprintf_p",5,0.064012%
+"glm::vec<2,float,0>::vec<2,float,0>",1,0.012802%
+"ImGui::FixupKeyChord",1,0.012802%
+"`fmt::v11::detail::format_float<double>'::`46'::<lambda_1>::operator()",1,0.012802%
+"Boid::boundPosition",1,0.012802%
+"ImVec2::ImVec2",1,0.012802%
+"ZwQueryInformationProcess",2,0.025605%
+"RtlSetLastWin32Error",1,0.012802%
+"sqrt",1,0.012802%
+"fdtest",2,0.025605%
+"GetProcAddress",1,0.012802%
+"fmt::v11::detail::get_container<fmt::v11::basic_appender<char> >",1,0.012802%
+"ImRect::IsInverted",1,0.012802%
+"std::unique_ptr<Boid,std::default_delete<Boid> >::operator->",1,0.012802%
+"GetWindowBgColorIdx",1,0.012802%
+"IsCompositionActive",2,0.025605%
+"std::_Construct_in_place<std::_Container_proxy,std::_Container_base12 *>",1,0.012802%
+"ImGui::GetColorU32",1,0.012802%
+"ImMax<float>",1,0.012802%
+"recalloc",1,0.012802%
+"glm::detail::compute_length<2,float,0,0>::call",1,0.012802%
+"glm::dot<3,float,0>",1,0.012802%
+"ImDrawList::_OnChangedClipRect",1,0.012802%
+"ImVec4::ImVec4",1,0.012802%
+"ImGuiDockNode::IsDockSpace",1,0.012802%
+"std::_Func_class<void,glm::vec<3,float,0> >::_Empty",1,0.012802%
+"GetCurrentThreadId",1,0.012802%
+"VerSetConditionMask",1,0.012802%
+"std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >",1,0.012802%
+"ImGui::KeepAliveID",1,0.012802%
+"fmt::v11::detail::copy<char,char const *,fmt::v11::basic_appender<char>,0>",1,0.012802%
+"ImGui::TabBarScrollClamp",1,0.012802%
+"ImGui::ItemAdd",1,0.012802%
+"makeContextCurrentWGL",1,0.012802%
+"GetWindowInfo",1,0.012802%
+"RtlEqualUnicodeString",1,0.012802%
+"ImVector<ImGuiViewportP *>::begin",1,0.012802%
+"Graphics::update",1,0.012802%
+"truncl",2,0.025605%
+"MultiByteToWideChar",1,0.012802%
+"IsDockNodeTitleBarHighlighted",1,0.012802%
+"std::_Fix_arg<BoidManager *,std::tuple<> >",1,0.012802%
+"ImRect::ImRect",1,0.012802%
+"ImVector<int>::push_back",1,0.012802%
+"ImVector<ImGuiWindow *>::resize",1,0.012802%
+"GetSystemTimeAsFileTime",1,0.012802%
+"std::vector<std::function<void __cdecl(glm::vec<3,float,0>)>,std::allocator<std::function<void __cdecl(glm::vec<3,float,0>)> > >::_Unchecked_end",1,0.012802%
+"ImGui::UpdatePlatformWindows",1,0.012802%
+"fmt::v11::detail::format_handler<char>::on_replacement_field",1,0.012802%
+"GetLastError",1,0.012802%
+"GetWindowLongPtrW",1,0.012802%
+"ImGui::RenderNavCursor",1,0.012802%
+"ImSaturate",1,0.012802%
+"glIsEnabled",1,0.012802%
+"fmt::v11::detail::format_handler<char>::on_text",1,0.012802%
+"GlobalFindAtomW",1,0.012802%
+"ImGui::RenderText",1,0.012802%
+"ImVector<ImGuiStyleMod>::back",1,0.012802%
+"std::unique_ptr<Boid,std::default_delete<Boid> >::get",1,0.012802%
+"ImGui::NavUpdateWindowing",1,0.012802%
+"glm::operator-<float,0>",1,0.012802%

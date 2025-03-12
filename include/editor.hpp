@@ -7,9 +7,11 @@
 #include <functional>
 #include <vector>
 
+struct GLFWwindow;
+
 class Editor {
 public:
-    bool initialize( void* Window );
+    bool initialize( GLFWwindow* Window );
     void shutdown();
     void update();
 

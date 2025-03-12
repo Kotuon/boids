@@ -2,11 +2,13 @@
 
 // System includes
 #include "imgui.h"
+#include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-#include "imgui_impl_win32.h"
 
 // Local includes
 #include "editor.hpp"
+#include "engine.hpp"
+#include "graphics.hpp"
 
 void Editor::helpMarker( const char* desc ) {
     ImGui::TextDisabled( "(?)" );
@@ -21,7 +23,7 @@ void Editor::helpMarker( const char* desc ) {
 
 Editor::Editor() {}
 
-bool Editor::initialize( void* Window ) {
+bool Editor::initialize( GLFWwindow* Window ) {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
 
@@ -43,26 +45,26 @@ bool Editor::initialize( void* Window ) {
     }
 
     // Setting up ImGui
-    ImGui_ImplWin32_InitForOpenGL( Window );
+    ImGui_ImplGlfw_InitForOpenGL( Window, true );
     ImGui_ImplOpenGL3_Init( "#version 330" );
 
-    // Engine::Instance().AddUpdateCallback( std::bind( &Editor::Update, this )
-    // ); Graphics::Instance().AddRenderCallback(
-    //     std::bind( &Editor::Render, this ) );
+    Engine::instance().addUpdateCallback( std::bind( &Editor::update, this ) );
+    Graphics::instance().addRenderCallback(
+        std::bind( &Editor::render, this ) );
 
     return true;
 }
 
 void Editor::shutdown() {
     ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplWin32_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 }
 
 void Editor::update() {
     // ImGui update functions
     ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplWin32_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
     // ImGui::ShowDemoWindow();
@@ -80,10 +82,10 @@ void Editor::render() {
     ImGui_ImplOpenGL3_RenderDrawData( ImGui::GetDrawData() );
 
     if ( ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable ) {
-        // GLFWwindow* backup_current_context = glfwGetCurrentContext();
+        GLFWwindow* backup_current_context = glfwGetCurrentContext();
         ImGui::UpdatePlatformWindows();
         ImGui::RenderPlatformWindowsDefault();
-        // glfwMakeContextCurrent( backup_current_context );
+        glfwMakeContextCurrent( backup_current_context );
     }
 }
 

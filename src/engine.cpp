@@ -7,113 +7,146 @@
 #include "engine.hpp"
 #include "graphics.hpp"
 #include "trace.hpp"
-#include "input.hpp"
 #include "camera.hpp"
 #include "shader_manager.hpp"
 #include "model_manager.hpp"
-#include "verlet.hpp"
 #include "editor.hpp"
+#include "input.hpp"
 
-Engine::Engine() {
+#include "boid_manager.hpp"
+
+constexpr int WIDTH = 1920;
+constexpr int HEIGHT = 1080;
+
+std::unique_ptr< BoidManager > BoidManagerInstance;
+
+Model* QuadModel;
+
+Engine::Engine() {}
+
+static void drawQuads() {
+    std::vector< float > Positions;
+    std::vector< float > Angles;
+
+    auto& Quads = BoidManagerInstance->getQuadtree()->getNodes();
+    size_t Size = Quads.size();
+
+    for ( auto& Quad : Quads ) {
+        Positions.push_back( 0.f );
+        Positions.push_back( Quad->Center.y );
+        Positions.push_back( Quad->Center.x );
+
+        Angles.push_back( Quad->Size );
+    }
+
+    glBindBuffer( GL_ARRAY_BUFFER, QuadModel->getMesh()->PositionVBO );
+    glBufferSubData( GL_ARRAY_BUFFER, 0, sizeof( float ) * 3 * Size,
+                     Positions.data() );
+    glBindBuffer( GL_ARRAY_BUFFER, 0 );
+
+    glBindBuffer( GL_ARRAY_BUFFER, QuadModel->getMesh()->AngleVBO );
+    glBufferSubData( GL_ARRAY_BUFFER, 0, sizeof( float ) * Size,
+                     Angles.data() );
+    glBindBuffer( GL_ARRAY_BUFFER, 0 );
+
+    glUseProgram( QuadModel->getShader() );
+
+    glUniformMatrix4fv(
+        glGetUniformLocation( QuadModel->getShader(), "projection" ), 1,
+        GL_FALSE, &Graphics::instance().getProjection()[0][0] );
+
+    glUniform1f( glGetUniformLocation( QuadModel->getShader(), "scale" ), 0.f );
+
+    glBindVertexArray( QuadModel->getMesh()->VAO );
+
+    glDrawArraysInstanced( QuadModel->getRenderMethod(), 0,
+                           QuadModel->getMesh()->NumVertices,
+                           static_cast< GLsizei >( Size ) );
+
+    glUseProgram( 0 );
+    glBindVertexArray( 0 );
 }
 
-bool Engine::Initialize() {
-    if ( !Graphics::Instance().Initialize() ) {
+bool Engine::initialize() {
+    if ( !Graphics::instance().initialize( WIDTH, HEIGHT ) ) {
         Trace::message( "Graphics falied to initialize." );
         return false;
     }
 
-    if ( !Camera::Instance().Initialize( glm::vec3( 0.f, 5.f, 20.f ) ) ) {
+    if ( !Camera::instance().initialize( glm::vec3( 0.f, 0.f, 60.f ) ) ) {
         Trace::message( "Camera falied to initialize." );
     }
 
-    if ( !Editor::Instance().Initialize() ) {
+    if ( !Editor::instance().initialize( Graphics::instance().getWindow() ) ) {
         Trace::message( "Editor failed to initialize." );
     }
 
-    ShaderManager::Instance().GetShader( "shaders/phong_vertex.glsl",
-                                         "shaders/phong_fragment.glsl" );
-    ShaderManager::Instance().GetShader( "shaders/instance_vertex.glsl",
-                                         "shaders/instance_fragment.glsl" );
-    ShaderManager::Instance().GetShader( "shaders/base_vertex.glsl",
-                                         "shaders/base_fragment.glsl" );
+    BoidManagerInstance =
+        std::make_unique< BoidManager >( glm::vec2( -15.f, 15.f ) );
 
-    VerletManager::Instance().CreateVerlets( ContainerShape::Sphere );
+    Graphics::instance().addRenderCallback( &drawQuads );
+    Graphics::instance().addRenderCallback(
+        std::bind( &BoidManager::draw, BoidManagerInstance.get() ) );
 
-    last_time = steady_clock::now();
-    accumulator = 0.f;
-    time = 0.f;
-    is_running = true;
+    Editor::instance().addDisplayMenuCallback( std::bind(
+        &BoidManager::displayEditorWindow, BoidManagerInstance.get() ) );
+
+    QuadModel = ModelManager::instance().getModel(
+        "models/cube.obj", GL_LINE_STRIP,
+        ShaderManager::instance().getShader( "shaders/quad_vert.glsl",
+                                             "shaders/quad_frag.glsl" ),
+        true );
+
+    Time = std::make_unique< TimeManager >();
+
+    IsRunning = true;
 
     return true;
 }
 
-void Engine::Update() {
-    Profiler profiler;
+void Engine::update() {
+    // Profiler ProfilerInstance( 100000 );
 
-    while ( is_running ) {
-        curr_time = steady_clock::now();
-        time_taken = curr_time - last_time;
-        delta_time = static_cast< float >( time_taken.count() ) *
-                     steady_clock::period::num / steady_clock::period::den;
+    while ( IsRunning ) {
+        Time->update();
 
-        last_time = curr_time;
-        accumulator += delta_time;
-
-        glfwSetWindowTitle( Graphics::Instance().GetWindow(),
-                            fmt::format( "FPS : {:0.2f} | Balls : {:10} | Time : {:5.2f}",
-                                         1.0f / delta_time,
-                                         VerletManager::Instance().GetCurrCount(), time )
+        glfwSetWindowTitle( Graphics::instance().getWindow(),
+                            fmt::format( "basic window: FPS: {:0.2f}",
+                                         1.f / Time->getDeltaTime() )
                                 .c_str() );
 
         // Non-fixed time step update calls
-        Input::Instance().Update();
+        Input::instance().update();
 
         // Fixed time step update calls
-        while ( accumulator >= fixed_time_step ) {
+        while ( Time->needsFixedUpdate() ) {
             // Call fixed updates here
 
-            for ( auto& func : fixed_update_callbacks ) {
-                func();
-            }
+            // BoidManagerInstance->update();
+            BoidManagerInstance->updateTree();
 
-            accumulator -= fixed_time_step;
-            time += fixed_time_step;
+            for ( auto& Func : FixedUpdateCallbacks ) {
+                Func();
+            }
         }
 
         // Non-fixed time step update calls
         // TODO: will be moved around
 
-        for ( auto& func : update_callbacks ) {
-            func();
+        for ( auto& Func : UpdateCallbacks ) {
+            Func();
         }
 
-        Camera::Instance().Update();
-        Graphics::Instance().Update();
+        Camera::instance().update();
+        Graphics::instance().update();
     }
 }
 
-void Engine::Shutdown() {
-    Graphics::Instance().Shutdown();
-}
+void Engine::shutdown() { Graphics::instance().shutdown(); }
 
-void Engine::TriggerShutdown() {
-    is_running = false;
-}
+void Engine::triggerShutdown() { IsRunning = false; }
 
-float Engine::GetDeltaTime() const {
-    return delta_time;
-}
-
-float Engine::GetTotalTime() const {
-    return time;
-}
-
-float Engine::GetFixedTimeStep() const {
-    return fixed_time_step;
-}
-
-Engine& Engine::Instance() {
-    static Engine engineInstance;
-    return engineInstance;
+Engine& Engine::instance() {
+    static Engine EngineInstance;
+    return EngineInstance;
 }

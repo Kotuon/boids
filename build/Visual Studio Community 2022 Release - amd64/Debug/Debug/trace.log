@@ -1,0 +1,4 @@
+graphics.cpp( 62:12 ): NVIDIA Corporation: NVIDIA GeForce RTX 2080 SUPER/PCIe/SSE2
+graphics.cpp( 65:12 ): GLFW	 3.5.0 Win32 WGL Null EGL OSMesa VisualC
+graphics.cpp( 66:12 ): OpenGL	 4.3.0 NVIDIA 566.36
+graphics.cpp( 68:12 ): GLSL	 4.30 NVIDIA via Cg compiler
